@@ -677,140 +677,140 @@ saludar();
 // Contructor: es una funcion obligatoria, el cual nos va a 
 // construir las propiedades de un objeto.
 
-class animal { //crea la platilla de un objeto
-    constructor/*el constructor del objeto*/ 
-    (tipo, raza, nombre, age, color){/*los atributos del objeto*/
-        this.tipo=tipo;
-        this.raza = raza;
-        this.nombre = nombre;
-        this.age = age;
-        this.color = color;
-        // esto se encarga de asignarle los atributos al objeto
-        this.info = `${this.raza}: Soy ${this.nombre} tengo ${this.age} años de edad y soy de color ${this.color}`;
-    };
-    verInfo = () =>{
-       return this.info;
-    };
-    // una funcion se le llama metodo cuando es creada 
-    // dentro de una clase    
-    ruido = () =>{
-        if (this.tipo == 1) {
-            return "WOF!!";
-        } else if(this.tipo == 2){
-            return "MIAU!!";
-        } else if(this.tipo == 3){
-            return "dAmE QueSO!!";
-        } else{
-            alert("Elije 1, 2 o 3 pendejo");
-        };
-    };
-    // Un metodo que trabajara de acuerdo a la opcion q elija el usuario
-    static feliz = () =>{
-        return "Estoy muy feliz uwu!!";
-    };
-    // Esto se mostrara asi el objeto sea o no creado 
+// class animal { //crea la platilla de un objeto
+//     constructor/*el constructor del objeto*/ 
+//     (tipo, raza, nombre, age, color){/*los atributos del objeto*/
+//         this.tipo=tipo;
+//         this.raza = raza;
+//         this.nombre = nombre;
+//         this.age = age;
+//         this.color = color;
+//         // esto se encarga de asignarle los atributos al objeto
+//         this.info = `${this.raza}: Soy ${this.nombre} tengo ${this.age} años de edad y soy de color ${this.color}`;
+//     };
+//     verInfo = () =>{
+//        return this.info;
+//     };
+//     // una funcion se le llama metodo cuando es creada 
+//     // dentro de una clase    
+//     ruido = () =>{
+//         if (this.tipo == 1) {
+//             return "WOF!!";
+//         } else if(this.tipo == 2){
+//             return "MIAU!!";
+//         } else if(this.tipo == 3){
+//             return "dAmE QueSO!!";
+//         } else{
+//             alert("Elije 1, 2 o 3 pendejo");
+//         };
+//     };
+//     // Un metodo que trabajara de acuerdo a la opcion q elija el usuario
+//     static feliz = () =>{
+//         return "Estoy muy feliz uwu!!";
+//     };
+//     // Esto se mostrara asi el objeto sea o no creado 
     
-};
-// HERENCIA:Es una clase q va a tomar una clase y todo lo q puede
-// hacer esa clase, pero ademas se le agregan cosas nuevas
-class Perro extends animal { //con extends heredamos las propeidades de animal
-    constructor(tipo, raza, nombre, age, color, peso, familia, altura){ //le agregamos otra propiedad
-        super(tipo, raza, nombre,  age, color);
-        // Tiene los valores hererdados de la clase animal
-        this.familia = familia;
-        this.peso = peso;
-        this.altura = null;
-        this.infoMore = `Soy un ${this.familia} y peso: ${this.peso}kg.`;
-    };
-    infoFur = () =>{
-        return this.infoMore;
-    };
+// };
+// // HERENCIA:Es una clase q va a tomar una clase y todo lo q puede
+// // hacer esa clase, pero ademas se le agregan cosas nuevas
+// class Perro extends animal { //con extends heredamos las propeidades de animal
+//     constructor(tipo, raza, nombre, age, color, peso, familia, altura){ //le agregamos otra propiedad
+//         super(tipo, raza, nombre,  age, color);
+//         // Tiene los valores hererdados de la clase animal
+//         this.familia = familia;
+//         this.peso = peso;
+//         this.altura = null;
+//         this.infoMore = `Soy un ${this.familia} y peso: ${this.peso}kg.`;
+//     };
+//     infoFur = () =>{
+//         return this.infoMore;
+//     };
     
-    set ponerAltura(height){
-        this.altura = height;
-    };
-    // Los setters nos permiten insertar datos en las propiedades
+//     set ponerAltura(height){
+//         this.altura = height;
+//     };
+//     // Los setters nos permiten insertar datos en las propiedades
 
-    get pedirAltura(){
-        return this.altura;
-    };
-    // Los getters nos permiten pedir datos de las propiedades de un obejto
-};
-let tipo = prompt("Que animal quieres crear? 1-Perro, 2-Gato o 3-Raton");
-// Necesitamos este valro para q el metodo dentro de animal funcione
-esp = () => {   
-    if (tipo == 1) {
-        return "Perro";
-    } else if(tipo == 2){
-        return "Gato";
-    } else if(tipo == 3){
-        return "Raton";
-    };
-};
-let raza = esp();
-// Dejamos que el usuario decida entre tres opciones
-function decideName() {
-    let name = prompt("Como lo llamaras?");
-    cambiarNombre = prompt("Quieres cambiarle el nombre al animal? S-SI, N-NO");
-    if (cambiarNombre == "S") {
-        function changeIt(){   
-        let nuevoNombre = prompt("Que nuevo nombre quieres q tenga?");
-        let decide = prompt(`Entonces tu ${raza} se llamara: "${nuevoNombre}"? S-SI, N-NO.`);
-        if ( decide == "S"){
-            return nuevoNombre;
-        } else{
-            decideName();
-        }
-       };
-       return changeIt();
-    } else{
-       function confirmation(){
-        let decide = prompt(`Entonces tu ${raza} se llamara: "${name}"? S-SI, N-NO.`);
-        return decide;
-       }
-       let decide = confirmation();
-       if (decide == "S") {
-           alert(`Tu ${raza} se llama ${name}`);
-           return name;
-       } else if (decide == "N"){
-           decideName();             
-       };
-       return confirmation();
-    };
-};
-let nombre = decideName();
-let age = prompt("cuantos años tiene?");
-let color = prompt("de que color es?");
-let peso = prompt("cuanto pesa?");
-let familia =prompt("que raza es?");
-function addHeight() {
-    let altura = prompt("cuanto mide el animal?");
-    let confirmation = prompt(`Entonces tu ${raza} llamado: "${nombre} mide ${altura}? S-Si, N-No`);
-    if (confirmation == "S") {
-        alert(`Tu ${raza} mide ${altura}`);
-        return altura;
-    } else {
-        alert("Entonces...");
-        addHeight();
-    };
-}
-let altura = addHeight();
-// Con esto dejamos q el usuario especifique las propiedades 
-const newObject = new animal(tipo, raza, nombre, age, color); 
-//con esto creamos un nuevo objeto con las propiedades 
-// especificadas  
-const perro = new Perro(this.tipo, this.raza, this.nombre, this.age, this.color, peso, familia);
-// aqui le añadimos nuevas propiedades al objeto
-// Las clases se tienen que definir con const
-perro.ponerAltura = altura;
-console.log(newObject.verInfo() + ". " + perro.infoFur() + ". " + newObject.ruido() + ", " + animal.feliz() + "mido:" + perro.altura);
+//     get pedirAltura(){
+//         return this.altura;
+//     };
+//     // Los getters nos permiten pedir datos de las propiedades de un obejto
+// };
+// let tipo = prompt("Que animal quieres crear? 1-Perro, 2-Gato o 3-Raton");
+// // Necesitamos este valro para q el metodo dentro de animal funcione
+// esp = () => {   
+//     if (tipo == 1) {
+//         return "Perro";
+//     } else if(tipo == 2){
+//         return "Gato";
+//     } else if(tipo == 3){
+//         return "Raton";
+//     };
+// };
+// let raza = esp();
+// // Dejamos que el usuario decida entre tres opciones
+// function decideName() {
+//     let name = prompt("Como lo llamaras?");
+//     cambiarNombre = prompt("Quieres cambiarle el nombre al animal? S-SI, N-NO");
+//     if (cambiarNombre == "S") {
+//         function changeIt(){   
+//         let nuevoNombre = prompt("Que nuevo nombre quieres q tenga?");
+//         let decide = prompt(`Entonces tu ${raza} se llamara: "${nuevoNombre}"? S-SI, N-NO.`);
+//         if ( decide == "S"){
+//             return nuevoNombre;
+//         } else{
+//             decideName();
+//         }
+//        };
+//        return changeIt();
+//     } else{
+//        function confirmation(){
+//         let decide = prompt(`Entonces tu ${raza} se llamara: "${name}"? S-SI, N-NO.`);
+//         return decide;
+//        }
+//        let decide = confirmation();
+//        if (decide == "S") {
+//            alert(`Tu ${raza} se llama ${name}`);
+//            return name;
+//        } else if (decide == "N"){
+//            decideName();             
+//        };
+//        return confirmation();
+//     };
+// };
+// let nombre = decideName();
+// let age = prompt("cuantos años tiene?");
+// let color = prompt("de que color es?");
+// let peso = prompt("cuanto pesa?");
+// let familia =prompt("que raza es?");
+// function addHeight() {
+//     let altura = prompt("cuanto mide el animal?");
+//     let confirmation = prompt(`Entonces tu ${raza} llamado: "${nombre} mide ${altura}? S-Si, N-No`);
+//     if (confirmation == "S") {
+//         alert(`Tu ${raza} mide ${altura}`);
+//         return altura;
+//     } else {
+//         alert("Entonces...");
+//         addHeight();
+//     };
+// }
+// let altura = addHeight();
+// // Con esto dejamos q el usuario especifique las propiedades 
+// const newObject = new animal(tipo, raza, nombre, age, color); 
+// //con esto creamos un nuevo objeto con las propiedades 
+// // especificadas  
+// const perro = new Perro(this.tipo, this.raza, this.nombre, this.age, this.color, peso, familia);
+// // aqui le añadimos nuevas propiedades al objeto
+// // Las clases se tienen que definir con const
+// perro.ponerAltura = altura;
+// console.log(newObject.verInfo() + ". " + perro.infoFur() + ". " + newObject.ruido() + ", " + animal.feliz() + "mido:" + perro.altura);
 
-let pedirAltura = prompt(`Quieres saber cuanto mide ${nombre}? S-Si, N-NO`);
-if (pedirAltura == "S") {
-    alert(perro.pedirAltura + "Master");
-} else{
-    alert("tabien (Y)");
-};
+// let pedirAltura = prompt(`Quieres saber cuanto mide ${nombre}? S-Si, N-NO`);
+// if (pedirAltura == "S") {
+//     alert(perro.pedirAltura + "Master");
+// } else{
+//     alert("tabien (Y)");
+// };
 // Declaramos una variable que toma el valor
 // del metodo del objeto
 // ABSTRACCION: Es intentar reducir un objeto a sus componentes basicos
@@ -826,7 +826,128 @@ if (pedirAltura == "S") {
 
 
 // HISTORIA DE KOFLA
+// KOFLA ENTRO EN UNA TIENDA DE CELULARES, PORQUE LE PARECIO BIEN COMPRAR
+// UN NUEVO CELULAR. DE TODOS LOS MODELOS QUE HABIAN DISPONIBLES
+// A KOFLA LE LLAMO LA ATENCION TRES MODELOS EN ESPECIFICO.
+// EL PROBLEMA ES QUE LOS VENDEDORES NO SABEN ABSOLUTAMENTE NADA
+// ACERCA DE ELLOS, POR LO QUE NO PÚEDEN DECIR NADA PARA RECOMENDARLE A
+// KOFLA. ANTES DE COMPRARLOS QUIERE VER LAS CUALIDADES Y COMPORTAMIENTOS
+// DE CADA UNO.
 
+// 1)CREA UN PROGRAMA QUE MUESTRE LAS PARTICULARIDADES DE LOS TRES CELULARES
+// 2)CADA UNO DEBE TENER COLOR, PESO, RESOLUCION DE PANTALLA Y CAMARA, Y MEMORIA
+// RAM.
+// 3)DEBEN PODER PRENDER, REINICIAR, TOMAR FOTOS Y GRABAR.
+
+class Celular{
+    constructor(color, peso, rdp, rdc, ram, precio){
+        this.color=color;
+        this.peso=peso;
+        this.rdp=rdp;
+        this.rdc=rdc;
+        this.ram=ram;
+        this.precio=precio;
+        this.on=false;
+        this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}`;
+    };
+    darInfo(){
+        alert(this.info);
+    };
+    encender(){
+        if(this.on=false){
+            alert("Encendiendo celular");
+            alert("celular prendido");
+            this.on=true;
+        } else{
+            alert("El celular ya esta encendido");
+        };
+    };
+    apagar(){
+        if(this.on=true){
+            alert("Apagando celular");
+            alert("celular prendido");
+            this.on=false;
+        } else{
+            alert("El celular ha sido apagado");
+        };
+    };
+    reiniciar(){
+        if(this.on=true){
+            alert("Reiniciando Celular");
+        }else{
+            alert("el celular esta apagado");
+        };
+    };
+    tomarFoto(){
+        alert(`foto tomada con una resolucion de ${this.rdc}`);
+    };
+    grabarVideo(){
+        alert(`Video grabado con una resolucion de ${this.rdc}`);
+    };
+}
+const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
+const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$");
+const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$");
+const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$");
+const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$");
+
+function celulares() {
+    let verCadaUno= prompt("Que celular quieres revisar? 1, 2, 3, 4 y 5");
+    parseInt(verCadaUno);
+
+    let celulares =["", celular1, celular2, celular3, celular4, celular5]; 
+    celulares[verCadaUno].encender();
+    celulares[verCadaUno].darInfo();
+    let capturar= prompt("quieres tomar una foto o grabar un video? F-Foto, V-Video, N-No quiero hacer ninguna");
+    if (capturar == "F") {
+        alert("Tomando Foto");
+        celulares[verCadaUno].tomarFoto();
+    } else if(capturar == "V"){
+        alert("Grabando Video");
+        celulares[verCadaUno].grabarVideo();
+    } else{
+        alert("ok (Y)");
+    };
+    let apagar = prompt("Quieres Apagar el Tlf? S-SI, N-NO");
+    if (apagar == "S") {
+        celulares[verCadaUno].apagar();
+    } else if (apagar == "N"){
+        let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
+        if (decide == "S") {
+            alert(`Informacion sobre el celular:` + celulares[verCadaUno].darInfo());
+            alert("su codigo es")
+        } else{
+            alert("Entonces vea otro celular...")
+            let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
+            if (decide == "S") {
+                celulares();
+            } else{
+                alert("Humildemente le pedimos que se largue");
+            };
+        };
+    };
+};
+celulares();
+ 
+// KOFLA NO ESTA SATISFECHO CON LA SECCION ANTERIOR POR LO QUE VA A LA SECCION
+// DE CELULARES DE ALTA GAMA. AHI ENCONTRARA LOS CELULARES MAS CAROS DE LA
+// TIENDA, DONDE VIO DOS CELULARES QUE LES PARECIO FABULOSOS, 
+// ESTOS DOS CELULARES QUE VIO PUEDEN HACER TODO LO QUE LOS ANTERIORES
+// PERO ADEMAS PUEDEN HACER COSAS MEJORES. PUEDEN GRABAR EN SUPER CAMRARA LENTA,
+// TIENEN RECONOCIMIENTO FACIAL Y UNA CAMARA EXTRA
+
+// 1)Implementar todas estas cualidades pero en los celulares de alta gama.
+
+// KOFLA AHORA TIENE SU NUEVO CELULAR Y ESTA MIRANDO LAS APLICACIONES
+// DEL PLAYSTORE YA QUE QUIERE JUGAR JUEGOS POPULARES, PERO LAS 7 APPS QUE
+// LLAMARON SU ATENCION SON UN TANTO SIMILARES LO QUE SIGNIFICA QUE EN CASO
+// QUE LAS DESCARGUE LAS JUGARIA TODAS POR LO QUE DESCARGARA SOLO DOS
+// PARA EVITAR PERDER TANTO TIEMPO JUGANDO. EL PROBLEMA ES SU INDECISION
+// ENTRE LAS 7 APPS.
+
+// 1)CREAR UN SISTEMA QUE AYUDE A KOFLA A DECIDIR CUAL APP DESCARGAR-
+// 2)DEBEN CONTENER LA CANTIDAD DE DESCARGAR, PUNTUACION Y PESO
+// 3)SE DEBEN PODER INSTALAR, ABRIR, CERRAR Y DESINTALAR
 
 // TERMINA CAPITULO 3
 
