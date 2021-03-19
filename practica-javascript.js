@@ -840,18 +840,22 @@ saludar();
 // 3)DEBEN PODER PRENDER, REINICIAR, TOMAR FOTOS Y GRABAR.
 
 class Celular{
-    constructor(color, peso, rdp, rdc, ram, precio){
+    constructor(color, peso, rdp, rdc, ram, precio, codigo){
         this.color=color;
         this.peso=peso;
         this.rdp=rdp;
         this.rdc=rdc;
         this.ram=ram;
         this.precio=precio;
+        this.codigo=codigo;
         this.on=false;
         this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}`;
     };
     darInfo(){
-        alert(this.info);
+        return this.info;
+    };
+    darCodigo(){
+        return this.codigo;
     };
     encender(){
         if(this.on=false){
@@ -865,10 +869,10 @@ class Celular{
     apagar(){
         if(this.on=true){
             alert("Apagando celular");
-            alert("celular prendido");
+            alert("celular Apagado");
             this.on=false;
         } else{
-            alert("El celular ha sido apagado");
+            alert("El celular ya esta apagado");
         };
     };
     reiniciar(){
@@ -886,18 +890,20 @@ class Celular{
     };
 }
 const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
-const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$");
-const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$");
-const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$");
-const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$");
+const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$", "HOTY");
+const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$", "ASDE");
+const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$", "LOPE");
+const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$", "MOFE");
 
 function celulares() {
     let verCadaUno= prompt("Que celular quieres revisar? 1, 2, 3, 4 y 5");
     parseInt(verCadaUno);
 
-    let celulares =["", celular1, celular2, celular3, celular4, celular5]; 
+    let celulares =["", celular1, celular2, celular3, celular4, celular5];
+    let info = celulares[verCadaUno].darInfo();
+    let codigo = celulares[verCadaUno].darCodigo();
     celulares[verCadaUno].encender();
-    celulares[verCadaUno].darInfo();
+    alert(info);
     let capturar= prompt("quieres tomar una foto o grabar un video? F-Foto, V-Video, N-No quiero hacer ninguna");
     if (capturar == "F") {
         alert("Tomando Foto");
@@ -911,11 +917,17 @@ function celulares() {
     let apagar = prompt("Quieres Apagar el Tlf? S-SI, N-NO");
     if (apagar == "S") {
         celulares[verCadaUno].apagar();
+        let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
+        if (decide == "S") {
+            celulares();
+        } else{
+            alert("Humildemente le pedimos que se largue");
+        };
     } else if (apagar == "N"){
         let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
         if (decide == "S") {
-            alert(`Informacion sobre el celular:` + celulares[verCadaUno].darInfo());
-            alert("su codigo es")
+            alert(`Informacion sobre el celular: ${info}`);
+            alert(`su codigo es: ${codigo}`);
         } else{
             alert("Entonces vea otro celular...")
             let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
