@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="author" content="Maximo Gomez" />
+        <meta name="title" content="Practica html" />
+        <meta name="description" content="Pagina web en donde Maximo Gomez aprendio sus conocimientos basicos en su primee idioma el html, un poco de css y script de java muy basicos." />
+        <meta name="keywords" content="Html, Maximo Gomez, Javascript basico, CSS" />
+        <meta name="viewport" http-equiv="content-type" content="text/html; charset=utf-8; width=device-width, inicial scale=1" />
+        <title>Practica Html</title>
+        <style type="text/css" media="all">
+         h1{
+             text-align: center;
+             font-size: 35px;
+         }
+         td, th{
+             padding: 5px;
+         }
+         p, span{
+            color: gold;
+            font-size: 25px;
+         }
+         .per{
+             list-style-type: none;
+         }
+         .per > li:before{
+            content: "->";
+            color: red;
+         }
+         dt{
+             font: bold 25px gold;
+         }
+         dd{
+             border: 3px solid black;
+             padding: 4px;
+         }
+         label{
+             color:white;
+             background-color: black;
+             padding: 4px;
+             font-size: 24px;
+             border: 3px solid white;
+             border-radius: 6px;
+             text-align: center;
+         }
+         input{
+             color: white;
+             background-color: black;
+             padding: 5px;
+             font-size: 18px;
+             border: 4 solid white;
+             border-radius: 8px;
+             text-align: center;
+         }
+        </style>
+        <!-- Estilo de la pagina -->
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1 style="background-color:red;">Practica Html5</h1>
+                <menu style="float:right;">
+                    <a href="#">Inicio</a>
+                    <a href="#">Inicio2</a>
+                    <a href="#">Inicio3</a>
+                    <a href="#">Inicio4</a>
+                </menu>
+            </nav>
+            <!--Titulo con menu basico de practica
+            Style en linea pars ponerlls uno lado de otro
+            -->
+        </header>
+        <main>
+            <h1 style="color:blue;">Practica Html</h1>
+            <!-- Cabecera con estilo en linea -->
+            <p style="font-size:25px; color:gold;">Esta es una pagina con los <i>inicios en html</i> de <b>Maximo Gomez</b>, utilizada para practicar sus conocimientos basicos</p>
+            <img alt="html imagen" style="width:100px; float:left;" src="http://www.manualweb.net/img/logos/html.png"/>
+            <!--Texto e imagen con estilo en linea -->
+            <p style="color:#008080;">Este es otro texto que uso <b>Maximo Gomez</b> para aprender como aprovechar los <i style="color:rgb(128,128,0);">colores nornales, hexadecimales y el rgb</i></p>
+            <!--Texto que usa estilo en linea para darle colores diferentes a las oraciones  -->
+            <p>Este <b>Texto</b> fue <q>utilizado</q> por <strong>Maximo Gomez</strong> para <mark>aprender</mark> como <tt>aprovechar</tt> los <em>formatos</Em> <i>de texto</i> como <u>underlinear</u>, <small>smallear</small>, <strike>subrayar</strike>, <code>codear</code> y <b><u><q><mark>combinar.</mark></q></u></b></p>
+            <!--Texto con todod los formatos de texto -->
+            <hr color="red" style=" height:20px;" />
+            <!--Linea horizontal modificada con style en linea. -->
+            <img width="200px" style="float:left;" src="http://www.manualweb.net/img/logos/html.png" alt="html imagen" /><span>Este texto se pone al lado de la imagem ya que <b>Maximo Gomez</b> utilizo el atributo float left en la imagen.</span>
+            <br /><br />
+            <!-- Separador de las imagenes -->
+            <img width="200px" style="float:right;" src="http://www.manualweb.net/img/logos/html.png" alt="html imagen" /><span>Lo mismo paso con este texto solo que al contrario del anterior debido a que <b>Maximo Gomez</b> utilizo el atributo float right en la imagen</span>
+            <!--Dos imagenes junto a texto que utilizaron el stributo float -->
+            <hr color="red" style=" height:20px;" />
+            <!-- separacion con lines de estilo en linea-->
+            <h2 style="text-align:center;">Tablas</h2>
+            <div><!-- tabla -->
+               <table style="background-color:blue; width:80%; margin: 0 auto; border: 2px solid black;">
+                   <thead>
+                       <tr>
+                           <th style="background-color:red; border:2px solid white;" colspan="2">Idiomas con sus paises natales</th>
+                       </tr>
+                       <tr>
+                           <th>Idiomas</th>
+                           <th>Pais</th>
+                       </tr>
+                   </thead>
+                   <tbody style="background-color:white; border:2px solid red; text-align:center;">
+                       <tr>
+                           <td>Ingles</td>
+                           <td>Reino Unido</td>
+                       </tr>
+                       <tr>
+                           <td>Español</td>
+                           <td>España</td>
+                       </tr>
+                       <tr>
+                           <td>Aleman</td>
+                           <td>Alemania</td>
+                       </tr>
+                       <tr>
+                           <td>Frances</td>
+                           <td>Francia</td>
+                       </tr>
+                   </tbody>
+               </table>
+            </div><!-- fin de tabla con style en linea -->
+        <hr color="red" style=" height:20px;" />
+        <!-- separacion linea con estilo-->
+        <h1>Listas</h1>
+    <div>
+       <article><!-- Listas Desordenadas y Ordenadas -->
+        <h2 style="text-align:center;">Listas Ordenadas y Desordenadas</h2>
+        <ol>
+            <h4>Lista Ordenada(Numeros)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ol>
+        <!-- Una lista simple ordenada-->
+        <ul>
+            <h4>Lista Desordenada(Circulos)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+        <ul style="list-style-type:square;">
+            <h4>Lista Desordenada(Cuadrados)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+        <ul style="list-style-type:upper-roman;">
+            <h4>Lista Desordenada(Numeros Romanos)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+        <ul style="list-style-type:lower-alpha;">
+            <h4>Lista Desordenada(Letras)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+        <ul class="per">
+            <h4>Lista Desordenada(Peesonalizada)</h4>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+       </article><!-- Fin de listas Ordenadas y Desordenadas -->
+       <article><!-- Listas Descriptivas -->
+       <h2 style="text-align:center;">Listas Descriptivas de Animales</h2>
+            <dl>
+                <dt>Perro</dt>
+                <dd>Aninal llamado perro por otros animales inteligentes llamados diegos</dd>
+            </dl>
+            <dl>
+                <dt>Gato</dt>
+                <dd>Lo mismo que el Perro pero mas pequeño y femenino</dd>
+            </dl>
+            <dl>
+                <dt>Rata</dt>
+                <dd>Animal pequeño devorado pro gatos F por las ratas</dd>
+            </dl>
+            <dl>
+                <dt>Queso</dt>
+                <dd>Alimento de la rata por eso las odian</dd>
+            </dl>
+            <dl>
+                <dt>Vaca</dt>
+                <dd>De las vacas se hace el queso, si eres vegano recuerda q el queso viene de un aninal explotado perro</dd>
+            </dl>
+            <dl>
+                <dt>T-rex</dt>
+                <dd>Depredador de las vacas, si asi tambien de los diegos y perros y todo, este man no deja pa los demas</dd>
+            </dl>
+       </article><!-- Fin de listas descriptivas -->
+       </div><!-- Fin de listas describitas y ordenas y desordenadas -->
+       <hr color="red" style="height:20px;" />
+       <h2 style="text-align:center;">Seccion dinamica con scripts basicos</h2>
+       <p id="par">Clickea abajo para mostrar un parrado en vez de este texto</p>
+       <button onclick="cambiartex();" type="submit">Cambiar texto</button>
+       <br />
+       <p style="font-size:15px; color: black;" id="sti">Clickea abajo para cambiar como se ve este texto</p>
+       <button onclick="cambiares();">Ponerle estilo</button>
+       <br />
+       <p id="tep">Clickea abajo para mostrar una imagen ****</p>
+       <button onclick="cambiarima();">Mostrar</button>
+       <p id="tepp"></p>
+       <img id="imp" src="" alt="" />
+       <hr color="red" style="height:20px;" />
+       <!-- Seccion dinamica de scripts basicos -->
+       <h2 style="text-align:center;">Formulario</h2>
+       <form action="#" method="post" accept-charset="utf-8">
+           <label for="nmbr">Nombre:</label>
+           <input required type="text" name="Nombre" id="nmbr" placeholder="Pon tu nombre aqui panita" /><br /><br />
+           <label for="aplld">Apellido:</label>
+           <input required type="text" name="Apellido" id="aplld" placeholder="Pon tu apellido bro" /><br /><br />
+           <label for="edd">Edad:</label>
+           <input required type="number" name="Edad" id="edd" placeholder="Aqui tu edad menol" /><br /><br />
+           <label for="dte">Fecha de hoy:</label>
+           <input required type="date" name="dte" id="dte"/><br /><br />
+       </form>
+       <button onclick="todo();" style="font-size:30px; height:50px; width:100%; background-color:white; color:black;">Enviar</button>
+       <!-- Formulario -->
+       <br />
+       <span id="certi"></span><span id="certiu"></span><span id="spa"></span><span id="certid"></span><span id="certif"></span><span id="certit"></span><span id="certig"></span><span id="certih"></span><span id="certic"></span><span id="finaler"></span>
+       <br />
+       <p id="gra"></p>
+       <!-- texto de javascript -->
+       <hr color="red" style="height:20px;" />
+       <form action="#" method="post" accept-charset="utf-8">
+           <h3 style="text-align:center; font-size:30px;">Textarea</h3>
+           <textarea style="border-radius:5px;background-color: black; border: 4px solid red; padding:5px; color:white; font-size:20px;" name="are" id="are" rows="8" cols="31" placeholder="Escribe un mensaje..."></textarea>
+       </form>
+           <button style="text-align:center; width:100%;  font-size:25px; border-radius:5px; border:4px solid black; background-color:red;"onclick="enviar();"type="submit">Enviar</button>
+           <h3 style="display:none;"id="mns">Mensaje Enviado:</h3>
+           <p id="env"></p>
+        <!-- Textares con script-->
+        <hr color="blue" style="height:20px;" />
+        <h2>Dropdowns</h2>
+        <select style="font-size:20px; padding:5px; background-color:black; color:red;"name="numro" id="numro">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <select style="font-size:20px; padding:5px; background-color:red;" name="cmd" id="cmd">
+            <option value="Arepa">Arepa</option>
+            <option value="Empanada">Empanada</option>
+            <option value="Pastelito">Pastelito</option>
+            <option value="Yuca">Yuca</option>
+        </select>
+        <button style="font-size:20px; background-color:red; color:white; text-align:center;" onclick="pedir();" type="submit">Pedir.</button>
+        <br /><br />
+        <span id="pedp"></span><span id="pedn"></span><span id="pdpd"></span><span id="pedo"></span>
+        <!-- Dropwown con scipt -->
+        <hr color="red" style="height:20px;"/>
+        <h3>Parrafo con codigos de character.</h3>
+        <p>Habia&nbsp;una&nbsp;vez&nbsp;un&nbsp;perro&nbsp;que&nbsp;se&nbsp;die.</p>
+        <p>Quimica&nbsp;es&nbsp;algo&nbsp;asi:<br />GYU<sub>2</sub>&nbsp;+&nbsp;HOI<sub>3</sub>&nbsp;&rarr;&nbsp;GPMJL<sub>377</sub></p>
+        <p>Matematica es en plan:</p>
+        <p>(x + 5)(x<sup>3</sup>+ 6)=</p>
+        <p>x<sup>4</sup> + 6x + 5x<sup>3</sup> + 30 =</p>
+        <p>x<sup>4</sup> + 5x<sup>3</sup> + 6x + 30.</p>
+        <pre>
+            ESTO ES
+    un texto loc
+                o usando
+        la pre tag pe
+rro
+        </pre>
+        <hr color="red" style="height:20px;" />
+        <h3>Audios y videos.</h3>
+        <iframe  width="380px" height="500px" src="https://www.youtube.com/embed/HgzGwKwLmgM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <h1>Se acabo el html</h1>
+    </main>
+   <br />
+   <br />
+   <br />
+   <script type="text/javascript" charset="utf-8">
+         function pedir(){
+             var pedido = document.getElementById("cmd").value;
+             var numero = document.getElementById("numro").value;
+             document.getElementById("pedp").innerHTML ="Has ordenado: ";
+             document.getElementById("pedn").innerHTML =numero;
+             document.getElementById("pdpd").innerHTML =" ";
+             document.getElementById("pedo").innerHTML =pedido;
+             alert("Orden Hecha!")
+         };
+         
+         function enviar(){
+             var mensaje = document.getElementById("are").value;
+             document.getElementById("env").innerHTML = mensaje;
+             document.getElementById("mns").style.display="block";
+             alert("Tu mensaje ha sido enviado a la nasa, te llamaran en 5 minutos");
+             
+         };
+         
+         function todo(){
+            var nombre = document.getElementById("nmbr").value;
+            var apellido = document.getElementById("aplld").value;
+            var edad = document.getElementById("edd").value;
+            var fecha = document.getElementById("dte").value;
+            
+            document.getElementById("certi").innerHTML = "Yo: " ;
+            document.getElementById("certiu").innerHTML = nombre;
+            document.getElementById("certid").innerHTML = apellido;
+            document.getElementById("certit").innerHTML = edad;
+            document.getElementById("certic").innerHTML = fecha;
+            document.getElementById("certif").innerHTML = " de: ";
+            document.getElementById("certig").innerHTML = " años de edad,";
+            document.getElementById("certih").innerHTML = " hoy: ";
+            document.getElementById("finaler").innerHTML = " por medio de la presente le otorgo todos mis bienes, a Maximo Gomez creador de esta pagina";
+            document.getElementById("gra").innerHTML = " Muchas gracias bro ;)";
+            document.getElementById("spa").innerHTML = " ";
+            
+         };
+        
+         alert("Habla perro, esta es la pagina donde Maximo aprendio a utilizae html con algunas cosas de estilo css y scripts de Java.");
+        
+         function cambiartex() {
+             document.getElementById("par").innerHTML ="Viste wey no paso nada malo eres burde panita bro, ahora prosigo con el parrafo, habia una vez un perro se msto porque se comio un raton pq pensaba q era un gato Fin";
+         };
+         
+         function cambiares() {
+             document.getElementById("sti").innerHTML ="Tampoco paso nada malo bro viste q no soy como tu ex q te mintio, y quedaste mal";
+             document.getElementById("sti").style.fontSize="30px";
+             document.getElementById("sti").style.color="gold";
+             document.getElementById("sti").style.border="2px solid black";
+             document.getElementById("sti").style.padding="5px";
+             document.getElementById("sti").style.textAlign="center";
+             document.getElementById("sti").style.backgroundColor="olive";
+         };
+         
+        function cambiarima(){
+            document.getElementById("tep").innerHTML="ASI TE QUERIA AGARRAR PUERCO, ESTO ES UN SITIO HTML NO PORNO, VAYA A HABLAR CON EL PADRE";
+            document.getElementById("tep").style.fontSize="40px";
+            document.getElementById("tep").style.color="red";
+            document.getElementById("tep").style.border="5px solid black";
+            document.getElementById("tep").style.padding="10px";
+            document.getElementById("tep").style.textAlign="center";
+            document.getElementById("tep").style.backgroundColor="black";
+            document.getElementById("imp").src="http://www.manualweb.net/img/logos/html.png";
+            document.getElementById("tepp").innerHTML="Por cierto igual mostro la imagen pero no la q querias pecador";
+        };
+    </script>
+    <!-- Scripts de la pagina -->
+    </body>
+</html>

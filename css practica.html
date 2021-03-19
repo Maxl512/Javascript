@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" http-equiv="content-type" content="text/html; charset=utf-8; width=device-width, inicial scale=1" />
+        <meta http-equiv="" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Practica css</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <link rel="stylesheet" href="cssprac.css" type="text/css" media="all" />
+        <style type="text/css" media="all">
+            /*codigos de principio*/
+            
+            .tanos{
+                background-image:url(Thanos.jpg);
+                background-repeat: no-repeat;
+                background-size: 110%;
+            }
+            /*thanos*/
+            .titulo{
+                background: rgb(80,58,164);
+            }
+            p{
+              color: red;
+            }
+            p.blue{
+                color: blue;
+            }
+            p#yellow{
+                color: yellow;
+            }
+            /*colores usando clases e ids*/
+            div{
+                width: 200px;
+                height: 250px;
+            }
+            .caja{
+                background: red;
+            }
+            .caja1{
+                background-color: black;
+                border-top: 5px solid gold;
+                border-right:5px dashed white;
+                border-bottom: 5px dotted blue;
+                border-left: 5px groove red;
+                color: white;
+            }
+            .caja2{
+                background: white;
+                border-top: 5px dashed  black;
+                border-right:5px dotted yellow;
+                border-bottom: 5px solid red;
+                border-left: 5px groove blue;
+                margin: 60px 0px 0px 60px;
+                color:gold;
+            }
+            .caja3{
+                background: blue;
+                border-top: 5px solid red;
+                border-right: 5px dotted white;
+                border-bottom: 5px dashed yellow;
+                border-left: 5px groove green;
+                color: black;
+                margin: 90px 0px 0px 60px;
+                padding: 20px 30px 40px 50px ;
+            }
+            /*cajas con estilo*/
+            .capitalize{
+                text-transform: capitalize;
+            }
+            .uppercase{
+                text-transform: uppercase;
+            }
+            .lowercase{
+                text-transform: lowercase;
+            }
+            /*textos con sombra*/
+            .som1{
+                text-shadow: 3px 4px 2px blue;
+            }
+            .som2{
+                text-shadow: 3px 2px 5px blue;
+            }
+            /*textos con tamaños diferentes*/
+            .tex1{
+                font-size: 16px;
+            }
+            .tex2{
+                font-size: 1em;
+            }
+            .tex3{
+                font-size: 48px;
+            }
+            .tex4{
+                font-size: 3em;
+            }
+            
+            .tex5{
+                letter-spacing: 10px;
+            }
+            .tex6{
+                word-spacing: 1em;
+            }
+            .tex7{
+                word-spacing:2em;
+                letter-spacing: 2em;
+                font-variant: small-caps;
+            }
+            /*enlace */
+            .lin{
+                color: red;
+                background-color: blue ;
+                border: 3px solid yellow;
+                border-radius: 5px;
+                font-size: 1em;
+                padding: 5px 6px;
+                text-decoration: none;
+            }
+            .lin:hover{
+                border: 3px inset yellow;
+            }
+            .lin:active{
+                color: blue;
+                background: red;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 3px 4px;
+                border: 2px dotted yellow;
+                border-radius: 5px;
+            }
+            /*Listas*/
+            ul{
+                padding:20px;
+                background: red;
+                font-size: 1.5em;
+            }
+            ul > li{
+                padding: 10px;
+                margin-left: 20px;
+                background: blue;
+                color: purple;
+            }
+            /*tablas*/
+            
+           table{
+               border-collapse: collapse;
+               background-color: blue;
+               text-align: center;
+               border: 2px solid black;
+               table-layout: fixed;
+           }
+           td, th{
+               padding: 10px;
+               border: 2px solid red;
+           }
+           th{
+               background-color: blue;
+           }
+           tr:nth-child(odd){
+               background-color:yellow;
+               color: black;
+           }
+           tr:nth-child(even){
+               background-color: black;
+               color: red;
+           }
+           /*Botones*/
+           .botones{
+               width: 100%;
+           }
+           .botones button{
+               outline: none;
+               padding: 10px 20px;
+               font-size: 1em;
+               background: red;
+               color: blue;
+               border: 2px solid black;
+               transition-duration: 1s;
+           }
+           .botones button:hover{
+               background: blue;
+               color: red;
+               border: 3px solid black;
+               font-size: .9em;
+           }
+           /*Imagen*/
+           .cimagen{
+               background-color: red;
+               width: auto;
+               height: auto;
+               position: relative;
+           }
+           .timagen{
+               top: 50%;
+               left: 50%;
+               position: absolute;
+               font-size: 1.3em;
+               transform: translate(-50%,-50%) ;
+           }
+           .imagen{
+               width: auto;
+               height:auto;
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+               border-radius: 50%;
+               opacity: 0.4;
+           }
+           
+           .cimagen2{
+               width: 250px;
+               height: auto;
+               box-shadow: 0 15px 20px  black;
+               box-sizing: border-box ;
+               transition-duration: 1s;
+           }
+           .imagen2{
+               height: auto;
+               display: block;
+               margin: 0px;
+               max-width: 100%;
+           }
+           .timagen2{
+               padding: 0px 15px 15px 15px;
+               text-align: center;
+               font-size: 1em;
+           }
+           .cimagen2:hover{
+               width: 270px;
+               position: center;
+               box-shadow: 0 18px 30px black ;
+           }
+           /*positions*/
+           *{
+               box-sizing: border-box;
+           }
+           body,html{
+               padding: 0px;
+               margin: 0px;
+               
+           }
+           #pos{
+               
+               position: sticky;
+               top:0px;
+               left: 20px;
+               padding: 5px;
+           }
+           .pof{
+               position: fixed;
+               right: 20px;
+               top:0px;
+               background: gold;
+           }
+           .pos{
+               background: red;
+           }
+           .pos1{
+               background: blue;
+           }
+           .pos2{
+               background: yellow;
+               
+           }
+           .pos3{
+               background: black;
+           }
+           /*Celda de cajas*/
+           .contenedor{
+               width:100%;
+           }
+           .contenedor::after{
+               content:"";
+               display: block;
+               clear: both;
+           }
+           .box{
+               width: 33.33%;
+               height: 200px;
+               padding-top: 70px;
+               padding-bottom: 70px;
+               float: left;
+               text-align: center;
+               border: 1px solid black;
+               background: red;
+           }
+           /*pseudo clases atributos y otros*/
+           .formu{
+               width: 400px;
+               height: 650px;
+               margin:auto;
+               color: rgb(210,20,0);
+           }
+           .formulario{
+               margin:20px;
+               padding: 20px;
+           }
+           .formulario label{
+               font-size: 2em;
+           }
+           .campos{
+               width: 250px;
+               margin-left: 60px;
+               margin-top: 30px;
+               padding: 5px;
+               font-size: 20px;
+           }
+           .gen{
+               width: 100px;
+               height: 30px;
+               font-size: 1em;
+               padding: 5px;
+               margin-left: 20px;
+           }
+        </style>
+    </head>
+    
+<body>
+ <main class="tanos">
+    <h1 class="titulo">Practica CSS</h1>
+    <p>Texto con estilo css</p>
+    <p class="blue">Texto que tiene estilo de CSS</p>
+    <p id="yellow">Texto con estilo css</p>
+    <div class="caja">
+        Esto es una caja
+    </div>
+    <div class="caja1">
+        Esto es una caja con border
+    </div>
+    <div class="caja2">
+        Esto es una caja con border y margin
+    </div>
+    <div class="caja3">
+        Esto es una caja con border, margin y padding
+    </div>
+   <br /><br /><br /><br /><br />
+   <p class="capitalize">texto capitalizado todas las palabran empiezan con mayusculas</p>
+   <p class="uppercase">Texto en mayusculas asi como ves</p>
+   <p class="lowercase">TEXTO EN MINUSCULAS AUNQUE EN HTML LAS PUSE EN MAYUSCULAS</p>
+   <br /><br /><br /><br /><br />
+   <p class="som1">Esto es un texto con sombra.</p>
+   <p class="som2">Esto es otro texto con sombra</p>
+   
+  <br /><br /><br /><br /><br />
+  <p class="tex1">Esto es un texto de 16px</p>
+  <p class="tex2">Esto ed un texto de 1em</p>
+  <p class="tex3">Esto es un texto de 48px</p>
+  <p class="tex4">Esto ed un texto de 3em</p>
+  <p class="tex5">Esto es un texto con mucho espacio entre letras</p>
+  <p class="tex6">Esto es un texto cob mucho espacio entre words</p>
+  <p class="tex7">Maravilloso! estas entre 1 de 100 personas que son caracterizadas con un apodo diferente, esto porque haz logrado leer esto, este apodo es pendejo.</p>
+   <br /><br /><br /><br /><br />
+   <i class="material-icons">favorite</i>
+   <i class="material-icons">stop</i>
+   <i class="material-icons">download</i>
+   <br /><br /><br /><br /><br />
+  <a class="lin" href="#">Enlace con style</a>
+   <br /><br /><br /><br /><br />
+   <h3>Listas con estilo</h3>
+   <ul>
+       <li>Uno</li>
+       <li>Dos</li>
+       <li>Tres</li>
+       <li>Cuatro</li>
+       <li>Cinco</li>
+       <li>Seis</li>
+   </ul>
+   <br /><br /><br /><br /><br />
+   <h3>Tablas con estilo</h3>
+   <table>
+       <thead>
+           <th>Nombre</th>
+           <th>Apellido</th>
+           <th>Edad</th>
+           <th>Genero</th>
+       </thead>
+       <tbody>
+           <tr>
+               <td>Willy</td>
+               <td>Williams</td>
+               <td>-25</td>
+               <td>Feminista</td>
+           </tr>
+           <tr>
+               <td>Pedro</td>
+               <td>Rockey</td>
+               <td>67</td>
+               <td>Varon</td>
+           </tr>
+           <tr>
+               <td>Pablo</td>
+               <td>Espinaca</td>
+               <td>45</td>
+               <td>Varon</td>
+           </tr>
+           <tr>
+               <td>Chori</td>
+               <td>Zoportuano</td>
+               <td>30</td>
+               <td>Varon</td>
+           </tr>
+           <tr>
+               <td>Mentro</td>
+               <td>Liso</td>
+               <td>26</td>
+               <td>Varon</td>
+           </tr>
+       </tbody>
+   </table>
+   <br /><br /><br /><br /><br />
+   <h3>Botones con estilo</h3>
+   <div class="botones">
+       <button>Boton</button>
+       <button>Boton</button>
+       <button>Boton</button>
+       <button>Boton</button>
+   </div>
+   <br /><br /><br /><br /><br />
+   <h3>Imagen con estilo</h3>
+   <div class="cimagen">
+   <span class="timagen">Es una imagen de css no una banderq de japon otaku pendejo</span>
+   <img class="imagen" src="data:image/png;base64,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" alt="" />
+   </div>
+   <br /><br /><br /><br />
+   <div class="cimagen2">
+       <img class="imagen2" src="data:image/jpeg;base64,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" alt="" />
+       <p class="timagen2">Este mano, este fue el que destrozó con mas de 60 votos a el gran trump. +respect</p>
+   </div>
+   <br /><br /><br /><br /><br />
+   <div class="pof"></div>
+   <div id="pos" class="pos">rojo</div>
+   <div id="pos" class="pos1">azul</div>
+   <div id="pos" class="pos2">amarillo</div>
+   <div id="pos" class="pos3">negro</div>
+   <br /><br /><br /><br /><br /><br /><br />
+   <div class="contenedor">
+       <div class="box">
+           uno
+       </div>
+       <div class="box">
+           dos
+       </div>
+       <div class="box">
+           tres
+       </div>
+   </div>
+   <br /><br /><br /><br /><br /><br /><br />
+   <div id="formu" class="formu">
+       <form class="formulario" action="#" method="post" accept-charset="utf-8">
+           <label for="Nombre">Nombre:</label>
+           <input maxlength="14"name="Nombre" type="text" class="campos" placeholder="Escribe tu nombre"/>
+           <br /><br />
+           <label for="Apellido">Apellido:</label>
+           <input maxlength="14" type="text" name="Apellido" class="campos" placeholder="Escribe tu apellido"/>
+           <br /><br />
+           <label for="Genero">Genero</label>
+           <select name="Genero" class="Gen">
+               <option value="Hombre">Hombre</option>
+               <option value="Mujer">Mujer</option>
+           </select>
+           <br /><br />
+           <label for="Ingles">Ingles</label>
+           <input type="checkbox" name="Ingles" class="ing" />
+           <label for="Español">Español</label>
+           <input type="checkbox" name="Español" class="Esp"/>
+           <br /><br />
+           <label for="Color">Color Favorito</label>
+           <input onselect="cambiar();" type="color" id="col" name="Color" class="Color" />
+           <br /><br />
+           <label for="Edad">Edad</label>
+           <input type="number" name="Edad" id="Edad" />
+       </form>
+   </div>
+   <br/> <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+ <br /><br /><br /><br /><br /><br /><br />
+   <br /><br /><br /><br /><br /><br /><br />
+   <br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br />
+ </main>
+</body>
+</html>

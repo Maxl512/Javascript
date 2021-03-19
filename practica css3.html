@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" http-equiv="content-type" content="text/html; charset=utf-8; width=device-width, inicial scale=1" />
+    <title>CCS3</title>
+    <style type="text/css">
+        *{
+            outline: none;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient( rgba(200,100,0,0.5), rgba(200,100,0,1));
+            text-shadow: 1px 0 red, -1px 0 red, 0 1px red, 0 -1px red, 2px 2px 5px yellow;
+
+        }
+        @media (max-height:1024px) and ( max-width:780px){
+        header{
+            background-color: rgb(200,100,0);
+            height: 120px;
+            padding: 15px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0px  7px 15px black;
+            position: fixed;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            font-size:1.3em;
+            display: block;
+            z-index: 3;
+        }
+        .pared{
+          display: none;
+        }
+        .fotodescri{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .foto{
+            width: 60%;
+            height: 200px;
+            border-radius: 0px 0px 0px 5px;
+            float: left;
+        }
+        .titulo{
+            margin-bottom: 0px;
+            text-align: center;
+            background: lightyellow;
+            border-radius: 5px 5px 0px 0px;
+            padding: 5px;
+        }
+        .creacion{
+            width: 90%;
+            background: lightyellow;
+            border-radius: 5px 5px 0px 0px;
+            box-shadow: 5px 3px 4px black, -3px 3px 4px black;
+            min-height: 250px;
+            margin: 0% 5%;
+
+        }
+        .descri{
+           float: left;
+           width: 40%;
+           font-size: 80%;
+           max-height: 180px;
+           text-align: left;
+           background: lightyellow;
+           padding: 20px 0px 0px 5px;
+           border-radius: 0px 0px 5px 0px;
+        }
+        footer{
+            position: fixed;
+            bottom: 0px;
+            background-color: rgb(200, 100, 0);
+            padding: 5px;
+            border-radius: 5px 5px 0px 0px;
+            box-shadow: 0px -3px 15px black;
+            width: 100%;
+            z-index: 3;
+        }
+        .piesin > h3{
+            text-align: center;
+            font-size: 120%;
+            background: black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .piecue{
+          width: 80%;
+          margin: 0% 15%;
+        }
+        .piecue > p{
+            float: left;
+            display: inline-block;
+            width: 50%;
+            font-size: 80%;
+        }
+        .piecue > ul{
+            float: right;
+            display: inline-block;
+            width: 50%;
+            font-size: 80%;
+        }
+        .copy{
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 70%;
+            float: left;
+            background-color: black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #columnas{
+            column-count: 3;
+            column-rule: 5px solid yellow;
+            padding: 5px;
+            font-size: 80%;
+        }
+      }
+
+      @media (min-height:760px) and (min-width:1000px){
+
+      header{
+          background-color: rgb(200,100,0);
+          max-height: 20%;
+          padding: 15px;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 0px;
+          box-shadow: 0px  7px 15px black;
+          position: fixed;
+          width: 70%;
+          margin: auto;
+          text-align: center;
+          font-size:1.7em;
+          display: block;
+          z-index: 3;
+          margin-left: 30%;
+        }
+        .pared{
+          background: rgb(200,100,0);
+          width: 30%;
+          position: fixed;
+          height: 100%;
+          z-index: 4;
+          padding: 30px;
+          box-shadow: 0px 7px 15px black;
+          overflow-y: scroll;
+        }
+        .pared > h2{
+          text-align: center;
+          font-size: 140%;
+          padding-bottom: 10px;
+          border-bottom: black solid 5px;
+        }
+        .pareden{
+          border-bottom: 5px solid black;
+          padding: 0px 0px 15px 0px;
+        }
+        .pareden a{
+          display: block;
+          margin: 10px;
+          padding: 10px;
+          text-decoration: none;
+          color: black;
+          font-size: 100%;
+          background-color: white;
+          border-radius: 5px;
+          text-align: center;
+          transition: color .5s, text-shadow .5s, background 1s, padding 1s;
+        }
+        .pareden a:hover{
+          background: black;
+          color: white;
+          text-shadow: 1px 0 orange, -1px 0 orange, 0 1px orange, 0 -1px red, 2px 2px 5px yellow;
+          padding: 15px 10px 15px 10px;
+        }
+        .pareden a:active{
+            font-size: 80%;
+        }
+      .fotodescri{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+      }
+      .foto{
+          width: 60%;
+          height: 200px;
+          border-radius: 0px 0px 0px 5px;
+          float: left;
+      }
+      .titulo{
+          text-align: center;
+          background: lightyellow;
+          border-radius: 5px 5px 0px 0px;
+          margin-bottom: 10px;
+          border-bottom: 5px solid orange;
+      }
+      .creacion{
+          width: 60%;
+          background: lightyellow;
+          border-radius: 5px 5px 0px 0px;
+          box-shadow: 5px 3px 4px black, -3px 3px 4px black;
+          min-height: 250px;
+          margin-left: 35%;
+          margin-top: 60px;
+          padding:5px 30px 30px 30px;
+      }
+      .descri{
+         float: right;
+         width: 40%;
+         margin-left: 10%;
+         font-size: 1.1em;
+         max-height: 180px;
+         text-align: center;
+         background: lightyellow;
+         padding: 20px 0px 0px 5px;
+         border-radius: 0px 0px 5px 0px;
+      }
+      footer{
+          position: fixed;
+          bottom: 0px;
+          background-color: rgb(200, 100, 0);
+          padding: 15px;
+          border-radius: 0px 5px 0px 0px;
+          box-shadow: 2px -3px 10px black;
+          width: 70%;
+          z-index: 3;
+          margin-left: 30%;
+      }
+      footer > div{
+          width: 100%;
+      }
+      .piesin > h3{
+          text-align: center;
+          font-size: 1.6em;
+          background: black;
+          border-radius: 5px;
+          height: 50px;
+          padding: 10px;
+          width: 90%;
+          margin: auto;
+          margin-top: 10px;
+      }
+      .piecue{
+        width: 90%;
+        margin: 10px 0px 10px 20%;
+      }
+      .piecue > p{
+          float: left;
+          display: inline-block;
+          width: 40%;
+      }
+      .piecue > ul{
+          float: right;
+          display: inline-block;
+          width: 60%;
+      }
+      .copy{
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 1.1em;
+          float: left;
+          bottom: 0px;
+          background-color: black;
+          padding: 10px;
+          border-radius: 5px;
+      }
+      #columnas{
+          column-count: 3;
+          column-rule: 5px solid yellow;
+          padding: 5px;
+          font-size: 100%;
+      }
+    }
+    @media (min-height:1460px) and (min-width:2000px){
+
+    header{
+        background-color: rgb(200,100,0);
+        max-height: 20%;
+        padding: 15px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+        box-shadow: 0px  7px 15px black;
+        position: fixed;
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        font-size:200%;
+        display: block;
+        z-index: 3;
+        margin-left: 30%;
+      }
+      .pared{
+        background: rgb(200,100,0);
+        width: 30%;
+        position: fixed;
+        height: 100%;
+        z-index: 4;
+        padding: 30px;
+        box-shadow: 0px 7px 15px black;
+        overflow-y: scroll;
+      }
+      .pared > h2{
+        text-align: center;
+        font-size: 300%;
+        padding-bottom: 10px;
+        border-bottom: black solid 5px;
+      }
+      .pareden{
+        border-bottom: 5px solid black;
+        padding: 0px 0px 15px 0px;
+      }
+      .pareden a{
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 250%;
+        background-color: white;
+        border-radius: 5px;
+        text-align: center;
+        transition: color .5s, text-shadow .5s, background 1s, padding 1s;
+      }
+      .pareden a:hover{
+        background: black;
+        color: white;
+        text-shadow: 1px 0 orange, -1px 0 orange, 0 1px orange, 0 -1px red, 2px 2px 5px yellow;
+        padding: 15px 10px 15px 10px;
+      }
+      .pareden a:active{
+          font-size: 200%;
+      }
+    .fotodescri{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .foto{
+        width: 60%;
+        height: 400px;
+        border-radius: 0px 0px 0px 5px;
+        float: left;
+    }
+    .titulo{
+        text-align: center;
+        background: lightyellow;
+        border-radius: 5px 5px 0px 0px;
+        margin-bottom: 10px;
+        border-bottom: 5px solid orange;
+        font-size: 300%;
+    }
+    .creacion{
+        width: 60%;
+        background: lightyellow;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 5px 3px 4px black, -3px 3px 4px black;
+        min-height: 400px;
+        margin-left: 35%;
+        margin-top: 100px;
+        padding:5px 30px 30px 30px;
+    }
+    .descri{
+       float: right;
+       width: 40%;
+       margin-left: 10%;
+       font-size: 250%;
+       max-height: 300px;
+       text-align: center;
+       background: lightyellow;
+       border-radius: 0px 0px 5px 0px;
+    }
+    footer{
+        position: fixed;
+        bottom: 0px;
+        background-color: rgb(200, 100, 0);
+        padding: 15px;
+        border-radius: 0px 5px 0px 0px;
+        box-shadow: 2px -3px 10px black;
+        width: 70%;
+        z-index: 3;
+        margin-left: 30%;
+    }
+    footer > div{
+        width: 100%;
+    }
+    .piesin > h3{
+        text-align: center;
+        font-size: 300%;
+        background: black;
+        border-radius: 5px;
+        height: 90px;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .piecue{
+      width: 90%;
+      margin: 10px 0px 10px 20%;
+    }
+    .piecue > p{
+        float: left;
+        display: inline-block;
+        width: 30%;
+        font-size: 300%;
+    }
+    .piecue > ul{
+        float: right;
+        display: inline-block;
+        width: 60%;
+        font-size: 300%;
+    }
+    .copy{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 250%;
+        float: left;
+        bottom: 0px;
+        background-color: black;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #columnas{
+        column-count: 3;
+        column-rule: 5px solid yellow;
+        padding: 5px;
+        font-size: 250%;
+    }
+  }
+        #sol{
+            background-image: radial-gradient(circle at 0 100%, yellow 40%, orange 50%, black 55% );
+        }
+        @keyframes anima{
+            0%{
+               transform: scale(1);
+               float: left;
+               background-color: red;
+               margin-top: 0px;
+               margin-left: 10px;
+            }
+            15%{
+                width: 25px;
+                height: 25px;
+                transform:rotate(45deg);
+                margin-top: 25px;
+                margin-left: 25px;
+                background-color: blue;
+            }
+            30%{
+                width: 50px;
+                height: 50px;
+                transform:rotate(90deg);
+                margin-top: 0px;
+                margin-left: 10px;
+                background-color: green;
+            }
+            45%{
+                width: 75px;
+                height:75px;
+                transform:rotate(135deg);
+                margin-top: 50px;
+                margin-left: 15px;
+                background-color: yellow;
+            }
+            60%{
+                width: 100px;
+                height: 100px;
+                transform:rotate(180deg);
+                margin-top: 50px;
+                margin-left: 40px;
+                background-color: black;
+            }
+            75%{
+                width: 125px;
+                height: 125px;
+                transform:rotate(225deg);
+                margin-top: 0px;
+                margin-left: 40px;
+                background-color: grey;
+            }
+            90%{
+                width: 140px;
+                height: 140px;
+                transform:rotate(300deg);
+                margin-top: 0px;
+                margin-left: 25px;
+                background-color: orange;
+            }
+            100%{
+                width: 150px;
+                height: 150px;
+                transform:rotate(360deg);
+                margin-left: 15px;
+                margin-top: 0px;
+                background-color: red;
+            }
+        }
+        #ani{
+            animation-name: anima;
+            animation-duration: 5s;
+            width: 150px;
+            height:150px;
+            margin-top: 0px;
+            margin-left: 10px;
+            position: relative;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-timing-function: linear;
+            float: left;
+            z-index: 2;
+        }
+        #dropd{
+            position: relative ;
+            display: inline-block;
+            box-shadow: 3px 5px 3px black ;
+            z-index: 2;
+        }
+        #dropd > button{
+            padding: 15px;
+            background: lightblue;
+            border: none;
+            width: 180px;
+            color: white;
+        }
+        #dropdw{
+            position:absolute;
+            height: 0px;
+            width: 100%;
+            box-shadow: 3px 5px 3px black;
+            transition: height 2s ;
+            overflow: hidden;
+        }
+        #dropd:hover > #dropdw{
+            height: 140px;
+        }
+        #dropdw > button{
+            padding: 15px;
+            width: 180px;
+            border: none;
+            transition: background 1s;
+        }
+        #dropdw >button:hover{
+            background: black;
+            color: white;
+
+        }
+        #nav{
+            width: 180px;
+        }
+        #nav > ul > li > a{
+            text-decoration: none;
+            color: black;
+            background: lightblue;
+            padding: 15px;
+            display:block;
+            transition: background 1s;
+
+        }
+        #nav > ul > li > a:hover{
+            color: white;
+            background: black;
+        }
+        #nav > ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #nav > ul > li{
+            text-align: center;
+            float: left;
+            width: 33%;
+        }
+        .pagination-container {
+         text-align: center;
+         width: 180px;
+         float: left;
+      }
+      .pagination {
+         display: inline-block; /* makes the ul act like an inline element but with controllable width and height */
+         margin: 0;
+         padding: 0;
+         border: 1px solid #0076ff;
+         border-radius: 5px;
+      }
+      .pagination li {
+         display: inline; /* makes the li act like inline elements */
+      }
+      .pagination a {
+         color: black;
+         text-decoration: none;
+         padding: 7px 14px;
+         float: left; /* floats the anchor elements to the left of each other */
+         border-right: 1px solid #0076ff;
+         transition-duration: 1s; /* sets the duration of the effect */
+      }
+      .pagination a:hover {
+         background: #0076ff;
+         color: white;
+      }
+      .pagination li:last-child > a { /* selects the last link */
+         border: none; /* removes borders of the last link */
+      }
+      .active {
+         color: white !important;
+         background: #0076ff;
+      }
+      .breadcrumbs {
+         background: #0076ff;
+         padding: 15px;
+     }
+      .breadcrumbs ul {
+         margin: 0;
+         padding: 0;
+      }
+      .breadcrumbs li {
+         display: inline-block;
+      }
+      .breadcrumbs li::before {
+         content: "⟩ "; /* change this character if you need to */
+         color: white;
+         margin: 0 8px;
+      }
+      /* change the character to insert before the first breadcrumbs link */
+      .breadcrumbs li:first-child::before {
+         content: "/ "; /* change this character if you need to */
+         color: white;
+         margin: 0 0;
+      }
+      .breadcrumbs li > a {
+         color: white;
+         text-decoration: none;
+         border-bottom: 1px solid white;
+      }
+      .breadcrumbs li:last-child > a {
+         color: white;
+         text-decoration: none;
+         border: none;
+      }
+        #tol{
+            padding: 15px;
+            text-align: center;
+        }
+        #tool{
+            position: relative;
+            border-bottom: 1px solid black;
+        }
+        #tool > span{
+            padding: 5px;
+            background: red;
+            border-radius: 5px;
+            opacity: 0;
+
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            width: 300px;
+            top: 150%;
+            margin-left: -150px;
+            left: 50%;
+            transition: opacity 1s;
+        }
+        #tool > span::after{
+            content: " ";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border: 5px solid transparent;
+            border-bottom-color: blue;
+        }
+        #tool:hover > span{
+            opacity: 1;
+        }
+        #cajita{
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: table;
+            position: fixed;
+            background: rgba(0,0,0, 0.6);
+            transition: opacity 1s;
+            z-index: -1;
+        }
+        #cajita:target{
+            opacity: 1;
+            z-index: 4;
+        }
+        #cajitacon{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            color: white;
+        }
+
+        #cerr{
+            position: absolute;
+            top: 10px;
+            right:  10px;
+            font-size: 30px;
+            font-weight: 300;
+            text-decoration: none;
+            color: white;
+        }
+        .sss{
+            background-color: red;
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+        }
+        #gale{
+            width: 160px;
+            box-shadow: 0px 8px 14px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+            height: 200px;
+            margin-right: 15px;
+        }
+        #gale > a > img{
+            width: 100%;
+            height:100%;
+        }
+        #imamodal{
+            display: table;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+            background-color: rgba(0,0,0,0.6);
+            transition:opacity 2s;
+        }
+        #imamodal:target{
+            opacity: 1;
+            z-index: 4;
+        }
+        #imamocon{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #imamocon > img{
+            max-width: 100%;
+            height: auto;
+        }
+        #imades{
+            background-color: white;
+            padding: 15px;
+        }
+        #container{
+          margin:15px;
+          border: 3px solid orange;
+          border-radius: 5px;
+        }
+        #acordion > label{
+          display: block;
+          padding: 10px;
+          border-bottom: 2px solid black;
+          color: white;
+          background: lightblue;
+          z-index: 2;
+        }
+        #acordion > label::before{
+          content: ">> ";
+        }
+          input[type="radio"]{
+            display: none;
+          }
+        #acordion:last-child > label, #acordion:last-child > #acordioncontent{
+          border: none;
+        }
+        #acordioncontent{
+          background: white;
+          opacity:0;
+          z-index: -1;
+          transition: .5s;
+          max-height: 0;
+          overflow: hidden;
+         }
+        input[type="radio"]:checked ~ #acordioncontent{
+          opacity:1;
+          max-height: 500px;
+          padding: 15px;
+        }
+        form{
+          margin:0% 5%;
+          width: 100%;
+        }
+        form > h3{
+          text-align: center;
+          font-size: 150%;
+        }
+        form label{
+          font-size: 120%;
+          margin-left: 5%;
+          display: inline-block;
+        }
+        input, textarea{
+          outline: none;
+          padding: 10px;
+          border:none;
+          border-bottom: 2px solid orange;
+          border-radius: 5px;
+          background: yellow;
+          color: black;
+          box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.5);
+          margin-left: 15%;
+          margin-top: 10px;
+          width: 60%;
+        }
+        input:focus, textarea:focus{
+          border-bottom: 2px solid black;
+          background: orange;
+          color: yellow;
+        }
+        input::placeholder{
+          text-shadow: none;
+        }
+        select{
+          border-bottom: 2px solid orange;
+          background: yellow;
+          color: black;
+          width: 15%;
+          border-radius: 5px;
+          margin-left: 3%;
+          margin-top: 10px;
+          padding: 5px;
+          box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.5);
+
+        }
+        label > span{
+          border-radius: 50%;
+          border: 3px solid blue;
+          width: 25px;
+          height: 20px;
+          margin-right: 10px;
+          display: inline-block;
+        }
+        input[type="checkbox"]{
+          display: none;
+        }
+        input[type="checkbox"]:checked + label > span {
+           background: black;
+        }
+        input[type="checkbox"]:checked + label  {
+          border-bottom: 2px solid black;
+          background: orange;
+          color: yellow;
+        }
+        .ml{
+          background: yellow;
+          border-bottom: 3px solid orange;
+          padding: 10px 15px;
+          border-radius: 5px;
+          box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.5);
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS3</h1>
+    </header>
+    <div class="pared">
+      <h2>Vista Rapida</h2>
+      <div class="pareden">
+        <a href="#">Ver sol</a>
+        <a href="#sol">Ver animacion</a>
+        <a href="#ani">Ver columnas</a>
+        <a href="#columnas">Ver dropdown</a>
+        <a href="#dropd">Ver Navigation Bar</a>
+        <a href="#nav">Ver Pagination</a>
+        <a href="#pagin">Ver Breadcumb</a>
+        <a href="#bread">Ver Tooltip</a>
+        <a href="#tol">Ver Lightbox</a>
+        <a href="#light">Ver Gallery</a>
+        <a href="#gale">Ver Acordion</a>
+        <a href="#container">Ver Form</a>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br />
+    <br />
+    <div class="creacion">
+        <h2 class="titulo">Sol</h2>
+        <div class="fotodescri">
+
+        <div id="sol" class="foto"></div>
+        <div class="descri">Este un sol hecho con la propiedad Radial Gradient. La sombra y bordeado del texto se hizo con Text-Shadow. La sombra de la caja se hizo con Box-Shadow.</div>
+
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Animacion</h2>
+        <div class="fotodescri">
+            <div id="ani"></div>
+            <div class="descri">Esta es una animacion, utilizando un keyframe y la propiedad animation.</div>
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Columnas</h2>
+        <div class="fotodescri">
+            <div id="columnas">
+                Estos es un grupo de columnas colocados con las propiedad columncount, tienen una separacion de 5px y solida, esto se utiliza para darle un estilo de continuidad a un texto, separandolo en partes iguales.Estos es un grupo de columnas colocados con las propiedad columncount, tienen una separacion de 5px y solida, esto se utiliza para darle un estilo de continuidad a un texto, separandolo en partes iguales.
+            </div>
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Dropdown</h2>
+        <div class="fotodescri">
+            <div id="dropd">
+                <button>Menu</button>
+                <div id="dropdw">
+                    <button>Uno</button>
+                    <button>Dos</button>
+                    <button>Tres</button>
+                </div>
+            </div>
+            <div class="descri">
+                Esto es un dropdown hecho con las propiedades transition position y display, ademas del overflow.
+            </div>
+
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Navigation Bar</h2>
+        <div class="fotodescri">
+            <div id="nav">
+                <ul>
+                    <li><a hresf="#">Uno</a></li>
+                    <li><a hresf="#">Dos</a></li>
+                    <li><a hresf="#">Tres</a></li>
+                </ul>
+            </div>
+            <div class="descri">
+                Esto es una barra de navegacion he ha con lista enlaces y algunos estilos.
+            </div>
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Pagination</h2>
+        <div id="pagin" class="pagination-container">
+      <ul class="pagination">
+         <li><a hsref="#">⟨</a></li>
+         <li><a hrsef="#" class="active">1</a></li>
+         <li><a hrsef="#">2</a></li>
+         <li><a hsref="#">3</a></li>
+         <li><a hrsef="#">4</a></li>
+         <li><a hresf="#">5</a></li>
+         <li><a hrsef="#">⟩</a></li>
+      </ul>
+   </div>
+        <div class="descri">
+            Una pagination que se utiliza para poder saber en q parte de la pagina se esta presente
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Breadcumb</h2>
+        <div id="bread" class="breadcrumbs">
+          <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Articles </a></li>
+            <li><a href="#"> Yummy Foods </a></li>
+          </ul>
+        </div>
+        <div class="descri">
+            Esto es un breadcumbs para mostrar en que parte de la pagina el usuario se encuentra
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Tooltip</h2>
+        <div id="tol">
+            <span id="tool">Tocame
+                <span>Esto es una tooltip para mostrar algun tipo de instruccion o algo. Ay me tocaste que gei</span>
+            </span>
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 id="light" class="titulo">Lightbox</h2>
+        <a id="enla" href="#cajita">Mostrar lightbox</a>
+        <div id="cajita">
+            <div id="cajitacon">
+                 <a id="cerr" href="#tol">Cerrar</a>
+                 <div class="sss">
+                     <p>Aqui va el contenido de el lighybox</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="creacion">
+        <h2 class="titulo">Gallery</h2>
+        <div class="fotodescri">
+            <div id="gale">
+                <a href="#imamodal"><img src="http://www.manualweb.net/img/logos/html.png" /></a>
+            </div>
+            <div class="descri">
+                Este es una foto de estilo de galeria. Toca la imagen para verla mas grande.
+            </div>
+        </div>
+    </div>
+    <div id="imamodal">
+            <div id="imamocon">
+                <a id="cerr" href="#enla">Cerrar</a>
+                <img src="http://www.manualweb.net/img/logos/html.png"/>
+                <div id="imades">
+                    Esta es una foto de galeria ahora en modal. Tas claro que te gusta verlas grandes.
+                </div>
+            </div>
+    </div>
+    <div class="creacion">
+      <h2 class="titulo">Accordion</h2>
+      <div class="fotodescri">
+        <div class="foto">
+            <div id="container">
+              <div id="acordion">
+                <input checked type="radio" name="acordion" id="acordion1">
+                <label for="acordion1">Acordion 1</label>
+                <div id="acordioncontent">
+                  Acordion numero 1 aqui va el contenido del acordion
+                </div>
+              </div>
+              <div id="acordion">
+                <input type="radio" name="acordion" id="acordion2">
+                <label for="acordion2">Acordion 2</label>
+                <div id="acordioncontent">
+                  Acordion numero 2 aqui va el contenido del acordion
+                </div>
+              </div>
+              <div id="acordion">
+                <input type="radio" name="acordion" id="acordion3">
+                <label for="acordion3">Acordion 3</label>
+                <div id="acordioncontent">
+                  Acordion numero 3 aqui va el contenido del acordion
+                </div>
+              </div>
+              <div id="acordion">
+                <input type="radio" name="acordion" id="acordion4">
+                <label for="acordion4">Acordion 4</label>
+                <div id="acordioncontent">
+                  Acordion numero 4  aqui va el contenido del acordion
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="descri">
+          Esto es un acordeon hecho con CSS3 con las propiedades opacity height border entre otras;
+        </div>
+      </div>
+    </div>
+    <div class="creacion">
+      <h2 class="titulo">Form</h2>
+      <div class="fotodescri">
+        <div class="foto">
+          <form method="post">
+            <h3>Formulario</h3>
+            <label for="texto">Campo de texto: </label><br>
+            <input placeholder="Escribe algo..." type="text" id="texto">
+            <br><br>
+            <label for="textarea">Textarea: </label><br>
+            <textarea placeholder="Escribe algo..." id="textarea"></textarea>
+            <br><br>
+            <label for="contra">Contraseña: </label><br>
+            <input id="contra" type="password" placeholder="Contraseña...">
+            <br><br>
+            <label for="select">Edad: </label>
+            <select id="select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <br><br>
+            <input id="male" type="checkbox">
+            <label class="ml" for="male"><span></span>Hombre</label>
+            <input id="female" type="checkbox">
+            <label class="ml" for="female"><span></span>Mujer</label>
+            <br><br>
+            <input type="submit" value="Confirmar">
+          </form>
+        </div>
+        <div class="descri">
+          Esto es un formulario normal con CSS3, hecho con inputs estilos etc
+          Esto es un formulario normal con CSS3, hecho con inputs estilos etc
+          Esto es un formulario normal con CSS3, hecho con inputs estilos etc
+          Esto es un formulario normal con CSS3, hecho con inputs estilos etc
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <br /><br />
+    <footer>
+        <div class="piesin">
+         <h3>Footer o pie con CSS3 </h3>
+         <div class="piecue">
+            <p>Este es un pue de navegacion hecho con css3, con propieades basicas como position sombras y colores. </p>
+            <ul>
+               <li><a hrsef="#"> About </a></li>
+               <li><a hresf="#"> Contact </a></li>
+               <li><a hresf="#"> Terms & Conditions </a></li>
+               <li><a hrsef="#"> Privacy Policy </a></li>
+            </ul>
+         </div>
+      </div>
+      <div class="copy">
+         © Copyright 2020 all right reserved.
+      </div>
+    </footer>
+     <br/> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+     <br/>
+</body>
+</html>
