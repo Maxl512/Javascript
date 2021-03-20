@@ -889,17 +889,47 @@ class Celular{
         alert(`Video grabado con una resolucion de ${this.rdc}`);
     };
 };
+class CelularAltaGama extends Celular{
+    constructor(color, peso, rdp, rdc, ram, precio, codigo, rdce){
+        super(color, peso, rdp, rdc, ram, precio, codigo);
+        this.rdce = rdce;
+        this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}. Mi camara extra tiene una resolucion de ${this.rdce}`;
+    };
+    darInfo(){
+        return this.info;
+    };
+    darCodigo(){
+        return this.codigo;
+    };
+    grabarVideoLento(){
+        alert("Estas grabando con camara lenta");
+        alert(`Video Grabado con una resolucion de ${this.rdce}`);
+    };
+    reconocimientoFacial(){
+        let nombre = prompt("Cual es su nombre?");
+        alert("Empezando reconocimiento facial...");
+        let resul = true;
+        if (resul == true) {
+            alert(`Bienvenido señor ${nombre}!`);
+        } else{
+            alert("No tiene los permisos para este dispositivo");
+        };
+    };
+};
 const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
 const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$", "HOTY");
 const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$", "ASDE");
 const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$", "LOPE");
 const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$", "MOFE");
+const celular6 = new CelularAltaGama("Morado", "250g", "7", "20k", "10GB", "500$", "GOTH", "10k");
+const celular7 = new CelularAltaGama("Gris", "300g", "8", "25k", "10GB", "800$", "THOR", "15k");
 
 function celulares() {
     let verCadaUno= prompt("Que celular quieres revisar? 1, 2, 3, 4 y 5");
     parseInt(verCadaUno);
 
     let celulares =["", celular1, celular2, celular3, celular4, celular5];
+    
     let info = celulares[verCadaUno].darInfo();
     let codigo = celulares[verCadaUno].darCodigo();
     celulares[verCadaUno].encender();
@@ -917,11 +947,45 @@ function celulares() {
     let apagar = prompt("Quieres Apagar el Tlf? S-SI, N-NO");
     if (apagar == "S") {
         celulares[verCadaUno].apagar();
-        let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
-        if (decide == "S") {
+        let decide = prompt("Quiere ver otro celular normal o uno de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver otro celular");
+        if (decide == "N") {
             window.celulares();
+        } else if(decide == "Ag"){
+            function celularesAltaGama() {
+                let decideAG = prompt("Tenemos dos celulares de alta gama, cual quieres ver?  1 o 2. N- No quiero ver ninguno");
+                let celularesAltaGama = ["", celular6, celular7];
+                let infoAG = celularesAltaGama[decideAG].darInfo();
+                let codigoAG = celularesAltaGama[decideAG].darCodigo();
+                alert("Encendiendo celular");
+                alert("Celular encendido");
+                celularesAltaGama[decideAG].reconocimientoFacial();
+                alert(infoAG);
+                let capturar= prompt("quieres grabar un video en camara lenta? S-Si N-No");
+                if(capturar == "S"){
+                    alert("Grabando Video en Camara Lenta");
+                    celularesAltaGama[decideAG].grabarVideoLento();
+                } else{
+                    alert("ok (Y)");
+                };
+                let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
+                if (decide == "S") {
+                    alert(`Informacion sobre el celular: ${infoAG}`);
+                    alert(`Su codigo es: ${codigoAG}`);
+                } else{
+                    alert("Entonces vea otro celular...")
+                    let decide = prompt("Quiere ver un celular normal u otro de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver ningun celular");
+                    if (decide == "N") {
+                        window.celulares();
+                    } else if(decide == "Ag"){
+                        celularesAltaGama();
+                    }else{
+                        alert("Le pedimos que se vaya");
+                    }
+                };
+            };
+            celularesAltaGama();
         } else{
-            alert("Humildemente le pedimos que se largue");
+            alert("Le pedimos que se largue");
         };
     } else if (apagar == "N"){
         let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
@@ -940,7 +1004,8 @@ function celulares() {
     };
 };
 celulares();
- 
+
+
 // KOFLA NO ESTA SATISFECHO CON LA SECCION ANTERIOR POR LO QUE VA A LA SECCION
 // DE CELULARES DE ALTA GAMA. AHI ENCONTRARA LOS CELULARES MAS CAROS DE LA
 // TIENDA, DONDE VIO DOS CELULARES QUE LES PARECIO FABULOSOS, 
