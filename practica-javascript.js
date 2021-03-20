@@ -1,20 +1,20 @@
 // VARIABLES
 // Es una espacio que nosotros guradamos en memoria
-var recipiente = "agua";
-console.log(recipiente);
-// En el se pueden guardar 3 importantes tipos de datos
-// String, Number y Boolean
-// String
-var string = "Texto";
-console.log(string);
-// number
-var number = 10;
-console.log(number);
-//booleano
-var tru = true;
-console.log(tru);
-var fal= false;
-console.log(fal);
+// var recipiente = "agua";
+// console.log(recipiente);
+// // En el se pueden guardar 3 importantes tipos de datos
+// // String, Number y Boolean
+// // String
+// var string = "Texto";
+// console.log(string);
+// // number
+// var number = 10;
+// console.log(number);
+// //booleano
+// var tru = true;
+// console.log(tru);
+// var fal= false;
+// console.log(fal);
 // Hay casos especiales de datos
 // estos nos explican si una variable no esta definida o hay un error
 // estos son:
@@ -34,31 +34,31 @@ console.log(fal);
 // *ver primera imagen explicando el scope*
 
 // Para crear una variable solo se necesita hacer esto:
-let numero;
-// sin embargo, como no tiene valor nos soltara: undefined
-// ahora para inicializarla, es decir, darle un valor 
-// se debe hacer esto
-numero = 30;
-// javascript utiliza el ultimo valor de las variables
-// si hacemos esto:
-numero = 40;
-// y luego la mostranmos
-console.log(numero);
+// let numero;
+// // sin embargo, como no tiene valor nos soltara: undefined
+// // ahora para inicializarla, es decir, darle un valor 
+// // se debe hacer esto
+// numero = 30;
+// // javascript utiliza el ultimo valor de las variables
+// // si hacemos esto:
+// numero = 40;
+// // y luego la mostranmos
+// console.log(numero);
 // nos mostrara el ultimo valor
 // const no se puede inicializar como con let
 // nos dara error, se debe inicializar en linea
 
 // Ahora bien, se pueden crear multiples variables
 
-let numero1, numero2, numero3;
+// let numero1, numero2, numero3;
 
-numero1 = 10;
-numero2 = 20;
-numero3 = 30;
+// numero1 = 10;
+// numero2 = 20;
+// numero3 = 30;
 
-console.log(numero1);
-console.log(numero2);
-console.log(numero3);
+// console.log(numero1);
+// console.log(numero2);
+// console.log(numero3);
 // solo se deben separar por comas
 
 // hoisting: habla sobre de como un sitio web puede ser
@@ -85,14 +85,14 @@ console.log(numero3);
 // *ver segunda imagen*
 
 // Resto
-let resto = 50;
-resto %= 12;
-console.log(resto);
+// let resto = 50;
+// resto %= 12;
+// console.log(resto);
 
-// exponencianion
-let exponenciacion = 5;
-exponenciacion **= 3;
-console.log(exponenciacion);
+// // exponencianion
+// let exponenciacion = 5;
+// exponenciacion **= 3;
+// console.log(exponenciacion);
 
 
 // OPERADORES ARITMETICOS
@@ -106,32 +106,32 @@ console.log(exponenciacion);
 // CONCATENACION
 // solo se deben separar las variables, cadenas de texto
 // o numero, con el signo "+".
-let saludos = "Hola mundo,";
-let pregunta = "Hay alguien ahi?";
-let edad = 15;
-let frase = saludos + " " + pregunta + " " + edad;
+// let saludos = "Hola mundo,";
+// let pregunta = "Hay alguien ahi?";
+// let edad = 15;
+// let frase = saludos + " " + pregunta + " " + edad;
 
-console.log(frase);
+// console.log(frase);
 
 // concat: se usa para concatenar, para poder usarlo debe de
 // haber un string
 
-let saludos2 = "Hola mundo2,";
-let pregunta2 = "Hay alguien ahi2?";
-let edad2 = 16;
-let frase2 = saludos2.concat(pregunta2) + " " + edad2;
+// let saludos2 = "Hola mundo2,";
+// let pregunta2 = "Hay alguien ahi2?";
+// let edad2 = 16;
+// let frase2 = saludos2.concat(pregunta2) + " " + edad2;
 
-console.log(frase2);
+// console.log(frase2);
 
 //backits: " ` " es una forma mas practica de concatenar
-// variables y texto
+// // variables y texto
 
-let saludos3 = "Hola mundo3,";
-let pregunta3 = "Hay alguien ahi3?";
-let edad3 = 17;
-let frase3 = `${saludos3} viva chiabeee, ${pregunta3}, tengo ${edad3} años`;
+// let saludos3 = "Hola mundo3,";
+// let pregunta3 = "Hay alguien ahi3?";
+// let edad3 = 17;
+// let frase3 = `${saludos3} viva chiabeee, ${pregunta3}, tengo ${edad3} años`;
 
-console.log(frase3);
+// console.log(frase3);
 
 // comillas simples y dobles
 // si se utilizan comillas dobles, no se puede utilizar de nuevo
@@ -139,9 +139,9 @@ console.log(frase3);
 // si se utilizan comillas simples, hay mas etica
 
 
-let frase4 = 'Viva "chiabeeeee", wiiiiii, que viva papi "madurooo';
+// let frase4 = 'Viva "chiabeeeee", wiiiiii, que viva papi "madurooo';
 
-console.log(frase4);
+// console.log(frase4);
 
 
 // OPERADORES DE COMPARACION
@@ -170,15 +170,15 @@ console.log(frase4);
 
 // tip: los bloques se ejecutan. los bloques comienzan
 // con llaves y se cierran con als mismas. estos se ejecutan
-// si el valor es true
+// // si el valor es true
 
-if (20 == "20") {
-    console.log("sicierto");
-} else if (20 === "20"){
-    console.log("sicierto");
-} else {
-    console.log("tu eres pendejo o q?");
-}
+// if (20 == "20") {
+//     console.log("sicierto");
+// } else if (20 === "20"){
+//     console.log("sicierto");
+// } else {
+//     console.log("tu eres pendejo o q?");
+// }
 
 // Historia de kofla parte 1:
 // Tres chicos de 23 años perfectamente normales, entran a una 
@@ -300,12 +300,12 @@ if (20 == "20") {
 
 // *ver quinta imagen*
 
-let frutas = ["Pera", "Manzana", "Mango", "Fresa"];
+// let frutas = ["Pera", "Manzana", "Mango", "Fresa"];
 
-// Para accerder a esos datos, se debe utilizar el simbolo "[]"
-// especificando la posicion del elemento
+// // Para accerder a esos datos, se debe utilizar el simbolo "[]"
+// // especificando la posicion del elemento
 
-console.log(frutas[1]);
+// console.log(frutas[1]);
 
 // Todos los valores sin definir dentro de un array
 // se marcan como undefined. Cuando un array se crea
@@ -324,65 +324,65 @@ console.log(frutas[1]);
 // Un array asociativo es un conjunto de un elemento
 // con diversas propiedades y datos
 
-let pc = {
-    nombre: "Maximo",
-    procesador: "Intel Core I7",
-    ram: "8GB",
-    espacio: "250gb"
-}
+// let pc = {
+//     nombre: "Maximo",
+//     procesador: "Intel Core I7",
+//     ram: "8GB",
+//     espacio: "250gb"
+// }
 
 // Para acceder a los datos de un array asociativo
 // debemos especificas a que propiedad queremos acceder
 
-console.log(pc["procesador"]);
+// console.log(pc["procesador"]);
 
-// un array asociativo es mas practico y util
-let pnombre = pc["nombre"];
-let pprocesador = pc["procesador"];
-let pram = pc["ram"];
-let pespacio = pc["espacio"];
+// // un array asociativo es mas practico y util
+// let pnombre = pc["nombre"];
+// let pprocesador = pc["procesador"];
+// let pram = pc["ram"];
+// let pespacio = pc["espacio"];
 
-let frasearray = `el nombre de mi pc es ${pnombre}
-su procesador es ${pprocesador}  tiene ${pram} de ram 
-y tiene ${pespacio} de espacio`;
+// let frasearray = `el nombre de mi pc es ${pnombre}
+// su procesador es ${pprocesador}  tiene ${pram} de ram 
+// y tiene ${pespacio} de espacio`;
 
-console.log(frasearray);
+// console.log(frasearray);
 
 // BUCLES E ITERACION
 // BUCLE: es la repeticion de un bloque, si una condicion se 
 // cumple. Los bucles preguntan la condicion todo el tiempo
 // con el fin de volver a ejecutar el bloque
-let numerob, numerob2, numerob3;
+// let numerob, numerob2, numerob3;
 
-numerob = 0;
-numerob2 = 0;
-numerob3 = 0;
+// numerob = 0;
+// numerob2 = 0;
+// numerob3 = 0;
 
-while (numerob < 10){
-    numerob++;
-    console.log(numerob + " 1ro");
-}
+// while (numerob < 10){
+//     numerob++;
+//     console.log(numerob + " 1ro");
+// }
 
 // Un simple bucle while
 
 // Do while: primero ejecuta el bloque y luego verifica si se
 // cumple la condicion para volver a ejecutarlo
 
-do {
-    console.log(numerob2 + " 2do");
-    numerob2++;
+// do {
+//     console.log(numerob2 + " 2do");
+//     numerob2++;
 
-} while (numerob2 < 10);
+// } while (numerob2 < 10);
 
-// para detener un bucle se utiliza la sentencia "break"
+// // para detener un bucle se utiliza la sentencia "break"
 
-while (numerob3 < 1000) {
-    numerob3++;
-    console.log(numerob3 + " 3er");
-    if (numerob3 == 10) {
-        break; //detiene el bucle
-    }
-}
+// while (numerob3 < 1000) {
+//     numerob3++;
+//     console.log(numerob3 + " 3er");
+//     if (numerob3 == 10) {
+//         break; //detiene el bucle
+//     }
+// }
 
 // el break se utiliza para evitar q lso bucles sigan funcionando
 // sin fin, dandole mas eficacia, rapidez y sencillez a los 
@@ -400,62 +400,62 @@ while (numerob3 < 1000) {
 // la diferencia es que el bucle for es un bucle
 // determinado
 
-let i = 30;
+// let i = 30;
 
-for(let i = 10; i > 0; i--)
-// el bucle se separa en tres partes:
-// declaracion e inicializacion
-// condicion
-// aumento o decremento
+// for(let i = 10; i > 0; i--)
+// // el bucle se separa en tres partes:
+// // declaracion e inicializacion
+// // condicion
+// // aumento o decremento
 
-{ 
-  if (i == 5) {
-      continue;
-    //esto hace que el numero 5 sea evitado o saltado
-  };
+// { 
+//   if (i == 5) {
+//       continue;
+//     //esto hace que el numero 5 sea evitado o saltado
+//   };
 
-  console.log(i);
-};
+//   console.log(i);
+// };
 
 // si queremos saltar un numero o valor, podemos usar la sentencia
 // "continue", se usa mucho para evitar mostrar algo q no queremos
 
-console.log(i);
+// console.log(i);
 // aqui se muestra el alcanza de let en el scope
 
 // Bucle For in y For on: se utiliza para acceder a lso datos
 // de un array u objeto
 
-let animales=["perro", "gato", "conejo"];
+// let animales=["perro", "gato", "conejo"];
 
-// For in: nos muestra la posicion de los datos almacenados
-// en el array
-for (let animal in animales){
-    console.log(animal);
-};
+// // For in: nos muestra la posicion de los datos almacenados
+// // en el array
+// for (let animal in animales){
+//     console.log(animal);
+// };
 
-// For of: nos muestra el dato almacenado en el array
-for (let animal of animales){
-    console.log(animal);
-};
+// // For of: nos muestra el dato almacenado en el array
+// for (let animal of animales){
+//     console.log(animal);
+// };
 
 // la sentencia label nos permite asociar un bucle a un nombre
 
-array1 =["maria", "josefa", "roberta"];
-array2 =["mario", "jose", array1, "pedro"];
+// array1 =["maria", "josefa", "roberta"];
+// array2 =["mario", "jose", array1, "pedro"];
 
-forRancio: //este es el label
-for (let array in array2){
-    if (array == 2) {
-        for (let array of array1){
-            console.log(array + " "); //Muestra a Maria
-            break forRancio; //Deja de mostrar datos
-        }
-    } else {
-        console.log(array2[array] + " "); //se ejecuta hasta q
-        // array sea igual a 2
-    }
-}
+// forRancio: //este es el label
+// for (let array in array2){
+//     if (array == 2) {
+//         for (let array of array1){
+//             console.log(array + " "); //Muestra a Maria
+//             break forRancio; //Deja de mostrar datos
+//         }
+//     } else {
+//         console.log(array2[array] + " "); //se ejecuta hasta q
+//         // array sea igual a 2
+//     }
+// }
 
 // el primer forin llama a todas las posiciones del array2
 // "array", luego este crea una condicion en la cual especifica
@@ -534,8 +534,8 @@ for (let array in array2){
 // Funciones flecha
 // Es un tipo de funcion resumida
 
-const saludar = () => console.log("hola");
-saludar();
+// const saludar = () => console.log("hola");
+// saludar();
 
 // HISTORIA DE KOFLA
 // UN JOVEN MUY AFORTUNADO LOGRO GANAR EL PRIMER PREMIO DE LA LOTERIA 
@@ -839,175 +839,175 @@ saludar();
 // RAM.
 // 3)DEBEN PODER PRENDER, REINICIAR, TOMAR FOTOS Y GRABAR.
 
-class Celular{
-    constructor(color, peso, rdp, rdc, ram, precio, codigo){
-        this.color=color;
-        this.peso=peso;
-        this.rdp=rdp;
-        this.rdc=rdc;
-        this.ram=ram;
-        this.precio=precio;
-        this.codigo=codigo;
-        this.on=false;
-        this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}`;
-    };
-    darInfo(){
-        return this.info;
-    };
-    darCodigo(){
-        return this.codigo;
-    };
-    encender(){
-        if(this.on=false){
-            alert("Encendiendo celular");
-            alert("celular prendido");
-            this.on=true;
-        } else{
-            alert("El celular ya esta encendido");
-        };
-    };
-    apagar(){
-        if(this.on=true){
-            alert("Apagando celular");
-            alert("celular Apagado");
-            this.on=false;
-        } else{
-            alert("El celular ya esta apagado");
-        };
-    };
-    reiniciar(){
-        if(this.on=true){
-            alert("Reiniciando Celular");
-        }else{
-            alert("el celular esta apagado");
-        };
-    };
-    tomarFoto(){
-        alert(`foto tomada con una resolucion de ${this.rdc}`);
-    };
-    grabarVideo(){
-        alert(`Video grabado con una resolucion de ${this.rdc}`);
-    };
-};
-class CelularAltaGama extends Celular{
-    constructor(color, peso, rdp, rdc, ram, precio, codigo, rdce){
-        super(color, peso, rdp, rdc, ram, precio, codigo);
-        this.rdce = rdce;
-        this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}. Mi camara extra tiene una resolucion de ${this.rdce}`;
-    };
-    darInfo(){
-        return this.info;
-    };
-    darCodigo(){
-        return this.codigo;
-    };
-    grabarVideoLento(){
-        alert("Estas grabando con camara lenta");
-        alert(`Video Grabado con una resolucion de ${this.rdce}`);
-    };
-    reconocimientoFacial(){
-        let nombre = prompt("Cual es su nombre?");
-        alert("Empezando reconocimiento facial...");
-        let resul = true;
-        if (resul == true) {
-            alert(`Bienvenido señor ${nombre}!`);
-        } else{
-            alert("No tiene los permisos para este dispositivo");
-        };
-    };
-};
-const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
-const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$", "HOTY");
-const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$", "ASDE");
-const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$", "LOPE");
-const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$", "MOFE");
-const celular6 = new CelularAltaGama("Morado", "250g", "7", "20k", "10GB", "500$", "GOTH", "10k");
-const celular7 = new CelularAltaGama("Gris", "300g", "8", "25k", "10GB", "800$", "THOR", "15k");
+// class Celular{
+//     constructor(color, peso, rdp, rdc, ram, precio, codigo){
+//         this.color=color;
+//         this.peso=peso;
+//         this.rdp=rdp;
+//         this.rdc=rdc;
+//         this.ram=ram;
+//         this.precio=precio;
+//         this.codigo=codigo;
+//         this.on=false;
+//         this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}`;
+//     };
+//     darInfo(){
+//         return this.info;
+//     };
+//     darCodigo(){
+//         return this.codigo;
+//     };
+//     encender(){
+//         if(this.on=false){
+//             alert("Encendiendo celular");
+//             alert("celular prendido");
+//             this.on=true;
+//         } else{
+//             alert("El celular ya esta encendido");
+//         };
+//     };
+//     apagar(){
+//         if(this.on=true){
+//             alert("Apagando celular");
+//             alert("celular Apagado");
+//             this.on=false;
+//         } else{
+//             alert("El celular ya esta apagado");
+//         };
+//     };
+//     reiniciar(){
+//         if(this.on=true){
+//             alert("Reiniciando Celular");
+//         }else{
+//             alert("el celular esta apagado");
+//         };
+//     };
+//     tomarFoto(){
+//         alert(`foto tomada con una resolucion de ${this.rdc}`);
+//     };
+//     grabarVideo(){
+//         alert(`Video grabado con una resolucion de ${this.rdc}`);
+//     };
+// };
+// class CelularAltaGama extends Celular{
+//     constructor(color, peso, rdp, rdc, ram, precio, codigo, rdce){
+//         super(color, peso, rdp, rdc, ram, precio, codigo);
+//         this.rdce = rdce;
+//         this.info = `Este celular es de color ${this.color}, pesa: ${this.peso}, tiene una resolucion de pantalla de ${this.rdp} pulgadas y la calidad de grabacion es de ${this.rdc} y cuesta ${this.precio}. Mi camara extra tiene una resolucion de ${this.rdce}`;
+//     };
+//     darInfo(){
+//         return this.info;
+//     };
+//     darCodigo(){
+//         return this.codigo;
+//     };
+//     grabarVideoLento(){
+//         alert("Estas grabando con camara lenta");
+//         alert(`Video Grabado con una resolucion de ${this.rdce}`);
+//     };
+//     reconocimientoFacial(){
+//         let nombre = prompt("Cual es su nombre?");
+//         alert("Empezando reconocimiento facial...");
+//         let resul = true;
+//         if (resul == true) {
+//             alert(`Bienvenido señor ${nombre}!`);
+//         } else{
+//             alert("No tiene los permisos para este dispositivo");
+//         };
+//     };
+// };
+// const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
+// const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$", "HOTY");
+// const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$", "ASDE");
+// const celular4 = new Celular("Amarillo", "120g", "4", "4k", "3GB", "150$", "LOPE");
+// const celular5 = new Celular("Rosado", "130g", "4", "1280p", "4GB", "200$", "MOFE");
+// const celular6 = new CelularAltaGama("Morado", "250g", "7", "20k", "10GB", "500$", "GOTH", "10k");
+// const celular7 = new CelularAltaGama("Gris", "300g", "8", "25k", "10GB", "800$", "THOR", "15k");
 
-function celulares() {
-    let verCadaUno= prompt("Que celular quieres revisar? 1, 2, 3, 4 y 5");
-    parseInt(verCadaUno);
+// function celulares() {
+//     let verCadaUno= prompt("Que celular quieres revisar? 1, 2, 3, 4 y 5");
+//     parseInt(verCadaUno);
 
-    let celulares =["", celular1, celular2, celular3, celular4, celular5];
+//     let celulares =["", celular1, celular2, celular3, celular4, celular5];
     
-    let info = celulares[verCadaUno].darInfo();
-    let codigo = celulares[verCadaUno].darCodigo();
-    celulares[verCadaUno].encender();
-    alert(info);
-    let capturar= prompt("quieres tomar una foto o grabar un video? F-Foto, V-Video, N-No quiero hacer ninguna");
-    if (capturar == "F") {
-        alert("Tomando Foto");
-        celulares[verCadaUno].tomarFoto();
-    } else if(capturar == "V"){
-        alert("Grabando Video");
-        celulares[verCadaUno].grabarVideo();
-    } else{
-        alert("ok (Y)");
-    };
-    let apagar = prompt("Quieres Apagar el Tlf? S-SI, N-NO");
-    if (apagar == "S") {
-        celulares[verCadaUno].apagar();
-        let decide = prompt("Quiere ver otro celular normal o uno de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver otro celular");
-        if (decide == "N") {
-            window.celulares();
-        } else if(decide == "Ag"){
-            function celularesAltaGama() {
-                let decideAG = prompt("Tenemos dos celulares de alta gama, cual quieres ver?  1 o 2. N- No quiero ver ninguno");                               
-                if (decideAG == "1" || decideAG == "2") {
-                    let celularesAG = ["", celular6, celular7];
-                    let infoAG = celularesAG[decideAG].darInfo();
-                    let codigoAG = celularesAG[decideAG].darCodigo(); 
-                    alert("Encendiendo celular");
-                    alert("Celular encendido");
-                    celularesAG[decideAG].reconocimientoFacial();
-                    alert(infoAG);
-                    let capturar= prompt("quieres grabar un video en camara lenta? S-Si N-No");
-                    if(capturar == "S"){
-                        alert("Grabando Video en Camara Lenta");
-                        celularesAG[decideAG].grabarVideoLento();
-                    } else{
-                        alert("ok (Y)");
-                    };
-                    let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
-                    if (decide == "S") {
-                        alert(`Informacion sobre el celular: ${infoAG}`);
-                        alert(`Su codigo es: ${codigoAG}`);
-                    } else{
-                        alert("Entonces vea otro celular...")
-                        let decide = prompt("Quiere ver un celular normal u otro de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver ningun celular");
-                        if (decide == "N") {
-                            window.celulares();
-                        } else if(decide == "Ag"){
-                            celularesAltaGama();
-                        }else{
-                            alert("Le pedimos que se vaya");
-                        };
-                    };
-                }else{
-                    alert("le pedimos que se vaya");
-                };
-            };
-            celularesAltaGama();
-        } else{
-            alert("Le pedimos que se largue");
-        };
-    } else if (apagar == "N"){
-        let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
-        if (decide == "S") {
-            alert(`Informacion sobre el celular: ${info}`);
-            alert(`Su codigo es: ${codigo}`);
-        } else{
-            alert("Entonces vea otro celular...")
-            let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
-            if (decide == "S") {
-                window.celulares();
-            } else{
-                alert("Humildemente le pedimos que se largue");
-            };
-        };
-    };
-};
-celulares();
+//     let info = celulares[verCadaUno].darInfo();
+//     let codigo = celulares[verCadaUno].darCodigo();
+//     celulares[verCadaUno].encender();
+//     alert(info);
+//     let capturar= prompt("quieres tomar una foto o grabar un video? F-Foto, V-Video, N-No quiero hacer ninguna");
+//     if (capturar == "F") {
+//         alert("Tomando Foto");
+//         celulares[verCadaUno].tomarFoto();
+//     } else if(capturar == "V"){
+//         alert("Grabando Video");
+//         celulares[verCadaUno].grabarVideo();
+//     } else{
+//         alert("ok (Y)");
+//     };
+//     let apagar = prompt("Quieres Apagar el Tlf? S-SI, N-NO");
+//     if (apagar == "S") {
+//         celulares[verCadaUno].apagar();
+//         let decide = prompt("Quiere ver otro celular normal o uno de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver otro celular");
+//         if (decide == "N") {
+//             window.celulares();
+//         } else if(decide == "Ag"){
+//             function celularesAltaGama() {
+//                 let decideAG = prompt("Tenemos dos celulares de alta gama, cual quieres ver?  1 o 2. N- No quiero ver ninguno");                               
+//                 if (decideAG == "1" || decideAG == "2") {
+//                     let celularesAG = ["", celular6, celular7];
+//                     let infoAG = celularesAG[decideAG].darInfo();
+//                     let codigoAG = celularesAG[decideAG].darCodigo(); 
+//                     alert("Encendiendo celular");
+//                     alert("Celular encendido");
+//                     celularesAG[decideAG].reconocimientoFacial();
+//                     alert(infoAG);
+//                     let capturar= prompt("quieres grabar un video en camara lenta? S-Si N-No");
+//                     if(capturar == "S"){
+//                         alert("Grabando Video en Camara Lenta");
+//                         celularesAG[decideAG].grabarVideoLento();
+//                     } else{
+//                         alert("ok (Y)");
+//                     };
+//                     let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
+//                     if (decide == "S") {
+//                         alert(`Informacion sobre el celular: ${infoAG}`);
+//                         alert(`Su codigo es: ${codigoAG}`);
+//                     } else{
+//                         alert("Entonces vea otro celular...")
+//                         let decide = prompt("Quiere ver un celular normal u otro de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver ningun celular");
+//                         if (decide == "N") {
+//                             window.celulares();
+//                         } else if(decide == "Ag"){
+//                             celularesAltaGama();
+//                         }else{
+//                             alert("Le pedimos que se vaya");
+//                         };
+//                     };
+//                 }else{
+//                     alert("le pedimos que se vaya");
+//                 };
+//             };
+//             celularesAltaGama();
+//         } else{
+//             alert("Le pedimos que se largue");
+//         };
+//     } else if (apagar == "N"){
+//         let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
+//         if (decide == "S") {
+//             alert(`Informacion sobre el celular: ${info}`);
+//             alert(`Su codigo es: ${codigo}`);
+//         } else{
+//             alert("Entonces vea otro celular...")
+//             let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
+//             if (decide == "S") {
+//                 window.celulares();
+//             } else{
+//                 alert("Humildemente le pedimos que se largue");
+//             };
+//         };
+//     };
+// };
+// celulares();
 
 
 // KOFLA NO ESTA SATISFECHO CON LA SECCION ANTERIOR POR LO QUE VA A LA SECCION
@@ -1035,7 +1035,15 @@ celulares();
 
 // EMPIEZA CAPITULO 4
 
+// METODOS DE CADENAS: Nos permite modificar cadenas
 
+let cadena = "cadena de prueba";
+let cadena2 = "cadena de prueba";
 
+resultado1 = cadena.concat(cadena2); //concat añade nuevas cadenas
+console.log(resultado1);
 
+resultado2 = cadena.startsWith(cadena2); //si una cadena es igual 
+// q la otra, devuelve true
+console.log(resultado2);
 
