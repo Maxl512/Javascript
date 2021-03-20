@@ -952,35 +952,39 @@ function celulares() {
             window.celulares();
         } else if(decide == "Ag"){
             function celularesAltaGama() {
-                let decideAG = prompt("Tenemos dos celulares de alta gama, cual quieres ver?  1 o 2. N- No quiero ver ninguno");
-                let celularesAltaGama = ["", celular6, celular7];
-                let infoAG = celularesAltaGama[decideAG].darInfo();
-                let codigoAG = celularesAltaGama[decideAG].darCodigo();
-                alert("Encendiendo celular");
-                alert("Celular encendido");
-                celularesAltaGama[decideAG].reconocimientoFacial();
-                alert(infoAG);
-                let capturar= prompt("quieres grabar un video en camara lenta? S-Si N-No");
-                if(capturar == "S"){
-                    alert("Grabando Video en Camara Lenta");
-                    celularesAltaGama[decideAG].grabarVideoLento();
-                } else{
-                    alert("ok (Y)");
-                };
-                let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
-                if (decide == "S") {
-                    alert(`Informacion sobre el celular: ${infoAG}`);
-                    alert(`Su codigo es: ${codigoAG}`);
-                } else{
-                    alert("Entonces vea otro celular...")
-                    let decide = prompt("Quiere ver un celular normal u otro de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver ningun celular");
-                    if (decide == "N") {
-                        window.celulares();
-                    } else if(decide == "Ag"){
-                        celularesAltaGama();
-                    }else{
-                        alert("Le pedimos que se vaya");
-                    }
+                let decideAG = prompt("Tenemos dos celulares de alta gama, cual quieres ver?  1 o 2. N- No quiero ver ninguno");                               
+                if (decideAG == "1" || decideAG == "2") {
+                    let celularesAG = ["", celular6, celular7];
+                    let infoAG = celularesAG[decideAG].darInfo();
+                    let codigoAG = celularesAG[decideAG].darCodigo(); 
+                    alert("Encendiendo celular");
+                    alert("Celular encendido");
+                    celularesAG[decideAG].reconocimientoFacial();
+                    alert(infoAG);
+                    let capturar= prompt("quieres grabar un video en camara lenta? S-Si N-No");
+                    if(capturar == "S"){
+                        alert("Grabando Video en Camara Lenta");
+                        celularesAG[decideAG].grabarVideoLento();
+                    } else{
+                        alert("ok (Y)");
+                    };
+                    let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
+                    if (decide == "S") {
+                        alert(`Informacion sobre el celular: ${infoAG}`);
+                        alert(`Su codigo es: ${codigoAG}`);
+                    } else{
+                        alert("Entonces vea otro celular...")
+                        let decide = prompt("Quiere ver un celular normal u otro de alta gama? N-Normal, Ag-Alta Gama, O-No quiero ver ningun celular");
+                        if (decide == "N") {
+                            window.celulares();
+                        } else if(decide == "Ag"){
+                            celularesAltaGama();
+                        }else{
+                            alert("Le pedimos que se vaya");
+                        };
+                    };
+                }else{
+                    alert("le pedimos que se vaya");
                 };
             };
             celularesAltaGama();
