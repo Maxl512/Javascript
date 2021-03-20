@@ -888,7 +888,7 @@ class Celular{
     grabarVideo(){
         alert(`Video grabado con una resolucion de ${this.rdc}`);
     };
-}
+};
 const celular1 = new Celular("Negro", "150g", "5", "1040p", "1GB", "50$", "CBDH");
 const celular2 = new Celular("Rojo", "140g", "5", "720p", "2GB", "100$", "HOTY");
 const celular3 = new Celular("Verde", "200g", "6", "full hd", "6GB", "300$", "ASDE");
@@ -919,7 +919,7 @@ function celulares() {
         celulares[verCadaUno].apagar();
         let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
         if (decide == "S") {
-            celulares();
+            window.celulares();
         } else{
             alert("Humildemente le pedimos que se largue");
         };
@@ -927,12 +927,12 @@ function celulares() {
         let decide = prompt("Quiere comprar el celular? S-SI, N-NO");
         if (decide == "S") {
             alert(`Informacion sobre el celular: ${info}`);
-            alert(`su codigo es: ${codigo}`);
+            alert(`Su codigo es: ${codigo}`);
         } else{
             alert("Entonces vea otro celular...")
             let decide = prompt("Quiere ver otro celular? S-SI, N-NO");
             if (decide == "S") {
-                celulares();
+                window.celulares();
             } else{
                 alert("Humildemente le pedimos que se largue");
             };
