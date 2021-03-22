@@ -1037,13 +1037,207 @@
 
 // METODOS DE CADENAS: Nos permite modificar cadenas
 
-let cadena = "cadena de prueba";
-let cadena2 = "cadena de prueba";
+function cadenas(){
 
-resultado1 = cadena.concat(cadena2); //concat añade nuevas cadenas
+let cadena = "cadena de prueba prueba prueba prueba prueba";
+let cadena2 = "cadena";
+let cadena3 = "de";
+let cadena4 = "prueba";
+let cadena5 = 23123162316;
+let cadena6 = "      hola     "
+
+let resultado1 = cadena.concat(cadena2); //concat añade nuevas cadenas
 console.log(resultado1);
 
-resultado2 = cadena.startsWith(cadena2); //si una cadena es igual 
-// q la otra, devuelve true
+let resultado2 = cadena.startsWith(cadena2); //si una cadena empieza igual
+// que la otra. devuelve true
 console.log(resultado2);
+
+let resultado3 = cadena.endsWith(cadena4);
+console.log(resultado3); // si una cadena termina igual que la otra
+// devuelve true
+
+let resultado4 = cadena.includes(cadena3); //si en la cadena se encuentra
+// esa cadena, devuelve true
+console.log(resultado4);
+
+let resultado5 = cadena.indexOf(cadena4); //nos devuelve la posicion en la que
+// se encuentra lo q le especifiquemos
+console.log(resultado5);
+
+let resultado6 = cadena.lastIndexOf(cadena4) // nos devuelve la posicion de 
+// la ultima coincidencia en la cadena
+console.log(resultado6);
+
+let resultado7 = cadena4.padStart(10, "XD"); // nos permite rellenar una cadena
+// con el numero de caracteres q elijamos, usando la cadena q especifiquemos
+console.log(resultado7);
+
+let resultado8 = cadena4.padEnd(10, "XD") ; // Trabaj igual q padStart, solo que
+// este rellena la cadena desde el fin de esta
+console.log(resultado8);
+
+let resultado9 = cadena4.repeat(5); // repite la cadena cuantas veces querramos
+console.log(resultado9);
+
+let resultado10 = cadena.split(" "); // Divide con el caracter q les indiquemos
+// crea un array con cada parte dividida por ese caracter
+console.log(resultado10[2]);
+
+let resultado11 = cadena.substring(7, 16); // creamos un nuevo string con los
+//caracteres del q le indiquemos, el string lo creamos dando una posicion
+// para empezar y otra para terminar, el que empieza esta incluido
+// el que termina no
+console.log(resultado11);
+
+let resultado12 = cadena.toLowerCase(); // convierte la cadena todo a minuscula
+console.log(resultado12);
+
+let resultado13 = cadena.toUpperCase(); // Convierte toda la cadena a mayusculas
+console.log(resultado13);
+
+let resultado14 = cadena5.toString(); // Convierte el elemento a un string
+console.log(resultado14);
+
+let resultado15 = cadena6.trim(); // Elimina los espacios en blanco que sobran
+//trimEnd eliminaria solo los del final, trimStart los del inicio
+console.log(resultado15.length);
+};
+cadenas();
+
+// METODOS DE ARRAYS: Se aplcian a un array
+
+function arrays() {
+    let nombres = ["Pedro", "Maria", "Jorge", "Samuel", "Jose", "Juan", "Carlos", "Arturo"];
+    console.log(`Estan: ${nombres}`);
+
+    let resultado = nombres.pop(); //Elimina el ultimo elemento de un array
+    console.log(`Fuera ${resultado}!!! *${resultado} se va*`);
+    console.log(`Quedan en el lugar : ${nombres}`);
+
+    let resultado2 = nombres.shift(); //elimina al primer elemento del array
+    console.log(`Fuera ${resultado2}!!! *${resultado2} se va*`);
+    console.log(`Quedan en el lugar : ${nombres}`);
+
+    let resultado3 = nombres.push("Lucas"); //Agrega un elemento al final del array
+    console.log(`Vente numero ${resultado3}!!! *Numero ${resultado3} viene*`);
+    // Push nos devuelve la cantidad de elemento que ahora hay en el array
+    console.log(`Quedan en el lugar: ${nombres}`);
+    
+    let resultado4 = nombres.reverse(); //Invierte el orden de los elementos
+    // de un array
+    console.log(resultado4);
+    
+    let resultado5 = nombres.unshift("Alberto", "Mike", "Peter"); 
+    //Agrega mas elemento al inicio de un array y
+    // luego devuelve la nueva longitud 
+    console.log(`Llegaron 3 personas, y ahora estan ${resultado5} personas, y son: ${nombres}`); 
+
+    let resultado6 = nombres.sort(); //Ordena los elementos de un array
+    // alfabeticamente
+    console.log(`Ordenense segun sus nombres!!! Ahora estan ${resultado6}`);
+
+    console.log(`Fuera ${nombres[1] + ", " + nombres[2] + ", " + nombres[3]}!!! Vengan "Alex", "John" y "Max"`);
+    nombres.splice(1, 3, "Alex", "John", "Max");
+    //Nos permite elegir que elementos sacar de un array, y si queremos 
+    // agregar otros
+    console.log(`Ahora estan: ${nombres}`);
+    nombres.sort();
+    console.log(`Ahora ordenence!! ${nombres}`);
+
+    let resultado7 = nombres.join(", Nombre: "); //Convierte un array en una cadena de
+    // texto, la diferencia es que con este podemos usar el separador
+    // que querramos
+    console.log("Nombre: " + resultado7);
+
+    let resultado8 = nombres.slice(0, 4);
+    console.log(`Vengan: ${resultado8}!`);
+    //nos Permite agarrar lso elementos que querramos
+
+    nombres.filter(numero => console.log(numero + "-- name"));
+    // El parametro q le pasemos va a iterar en cada elemento del array
+}
+arrays();
+
+// OBJETO MATH
+
+function maths() {
+    let number = 2341;
+    let number2 = 23433331;
+    let number3 = 2342221;
+    let number4 = 234143;
+    let number5 = 23413;
+    
+    console.log(Math.sqrt(number)); 
+    //Nos muestra la raiz cuadrada de un numero
+
+    console.log(Math.cbrt(number));
+    //nos muestra la raiz cubica de un numero
+
+    console.log(Math.max(number, number2, number3, number4, number5));
+    //Nos muestra el numero mas alto q le ingresamos
+
+    console.log(Math.min(number, number2, number3, number4, number5));
+    //Nos devuelve el numero mas pequeño q ingresamos
+
+    console.log(Math.round(5.686868688686868));
+    //Redondea el numero a uno mayor si su decimal es mayor o igual a 5
+    //Redondea a uno menor si el decimal es menor o igual a 4
+
+    let numero = Math.random() * 99;
+    // Nos envia un numero entre 0 y 1
+    numero = Math.floor(numero + 1);
+    //Redondea a un numero menor sin importar su decimal
+    console.log(numero);
+
+    let numero2 = Math.fround(9.553434323324324342342234342234);
+    console.log(numero2);
+    // irrelevante
+
+    let numero3 = Math.trunc(9.343423478);
+    console.log(numero3);
+    // Elimina los decimales
+
+    let numero4 = Math.PI;
+    console.log(numero4);
+    // Nos muestra el valor de pi
+
+    let numero5 = Math.SQRT2;
+    console.log(numero5);
+    // La raiz cuadrada de 2
+
+    let numero6 = Math.SQRT1_2;
+    console.log(numero6);
+    // Raiz cuadrada de un medio
+
+    let numero7 = Math.E;
+    console.log(numero7);
+    // Nos devuelve el valor de la constante de Euler
+}
+maths();
+
+
+//Historia de kofla
+
+/*
+KOFLA YA ESTA TERMINANDO EL PRIMER SEMESTRE DE LA UNIVERSIDAD
+UY AHORA LAS TAREAS Q TIENE SON MAS AVANZADAS Q ANTES, DEBERA HACER
+TIPOS DE OPERACIONES MAS AVANZADAS COMO CALCULAR POTENCIAS, RAICES
+CUADRADAS Y RAICES CUBICAS.
+
+1)CREAR CALCULADORA CON NUEVA FUNCIONES
+
+LA FACULTAD DE KOFLA ESTA POR ARRANCAR NUEVAMENTE Y LAS 12
+MATERIAS TIENEN ASIGNADO UN PROFESOR Y TODOS LOS ALUMNOS A SUS CLASES
+
+
+
+*/
+
+
+// Termina CApitulo 4
+
+
+
+//Empieza Capitulo 5
 
