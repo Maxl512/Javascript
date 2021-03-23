@@ -1307,7 +1307,7 @@ y el nombre de los alumnos
 3)Nombre de las clases y sus profesores de kofla
 
 */
-const obtenerInformacion = (materia) =>{
+const classesInformation = (materia) =>{
     materias={
         fisica : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
         programacion : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
@@ -1321,7 +1321,7 @@ const obtenerInformacion = (materia) =>{
         return false;
     };
 };
-const mostrarInformacion = () => { 
+const mostrarInformacion = (userName) => {   
     let decide = prompt("Que materia quieres ver? F-Fisica, P-Programacion, Q-Quimica, L-Logica, B-Biologia");
     function elegirMateria() {
         if (decide == "F"){
@@ -1338,49 +1338,64 @@ const mostrarInformacion = () => {
             alert("Elije una de las anteriores escribiendo su letra correspondiente");
         };
     };
-    let defin = elegirMateria();
-    let grupo = obtenerInformacion(defin)[0];
+    let materia = elegirMateria();
+    let grupo = classesInformation(materia)[0];
     let infoProfesor = grupo.shift();  
-    let Materia = obtenerInformacion(defin)[1];   
-    let info = obtenerInformacion(defin);
+    let materiaName = classesInformation(materia)[1]; 
+    let info = classesInformation(materia);
+    let clasesActivas = 0;
     if (info !== false) { 
-        alert(`En la materia de ${Materia}: 
+        alert(`En la materia de ${materiaName}: 
         actualmente hay: ${grupo.length} alumnos quienes son: ${grupo}. 
         El profesor es: ${infoProfesor}`);
     } else{
         return false;
     };
-    const mostrarClasesActivas = () => {
-        let grupo = obtenerInformacion(defin)[0];
-        let infoProfesor = grupo.shift();  
-        let Materia = obtenerInformacion(defin)[1]; 
-        let info = obtenerInformacion(defin);
-        if (info !== false) {
-            let verify = grupo.includes("Kofla");
-            if (verify == true) {
-                let koflaPosition = grupo.indexOf("Kofla");
-                grupo.splice(koflaPosition);
-                alert(`Estas inscrito en ${Materia}, junto con ${grupo}. Tu profesor es: ${infoProfesor}`);
-                let decide = prompt("Quieres ver otra materia? S-Si, N-No");
-                if (decide == "S") {
-                    mostrarInformacion();
-                } else{
-                    alert("Ok");
-                };
-            } else if(verify == false){
-                alert(`No estas inscrito en ${Materia}...`);
-                let decide = prompt("Quieres ver otra materia? S-Si, N-No");
-                if (decide == "S") {
-                    mostrarInformacion();
-                } else{
-                    alert("Ok");
-                };
+    if (info !== false) {
+        let verify = grupo.includes(userName);
+        if (verify == true) {
+            let userPosition = grupo.indexOf(userName);
+            grupo.splice(userPosition);
+            alert(`Estas inscrito en ${materiaName}, junto con ${grupo}. Tu profesor es: ${infoProfesor}`);
+            let decide = prompt("Quieres ver otra materia? S-Si, N-No");
+            if (decide == "S") {
+                mostrarInformacion(userName);
+            } else{
+                alert("Ok");
+            };
+        } else if(verify == false){
+            alert(`No estas inscrito en ${materiaName}...`);
+            let decide = prompt("Quieres ver otra materia? S-Si, N-No");
+            if (decide == "S") {
+                mostrarInformacion(userName);
+            } else{
+                alert("Ok");
             };
         };
     };
-    mostrarClasesActivas();
+    for (inscritos in grupo){
+        if (grupo[inscritos].includes(userName)) {
+            clasesActivas++;
+        };
+    };
+
 };
-let showClasses = mostrarInformacion();
+function preguntarName() {
+    let nombre = prompt("Cual es tu nombre?");
+    if (nombre !== undefined) {
+        alert(`Bienvenido Sr. ${nombre}`);           
+        mostrarInformacion(nombre);
+    } else{
+        alert("Tienes que ingresar un nombre...");
+        let decide = prompt("Quieres intentarlo de nuevo? S-Si, N-No");
+        if (decide == "S") {
+            preguntarName();
+        } else{
+            alert("Ok");
+        }; 
+    };
+};
+preguntarName();
 
 /*
 
