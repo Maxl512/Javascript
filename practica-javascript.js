@@ -1,4 +1,4 @@
-
+/*
 // VARIABLES
 // Es una espacio que nosotros guradamos en memoria
 var recipiente = "agua";
@@ -519,7 +519,7 @@ num1= prompt("dime un numero");
 num2= prompt("dime otro");
 //Dejamos que el usuario decida q numeros multiplicar
 
-function multiplicar(num1, num2 /*Estos son los parametros */) {
+function multiplicar(num1, num2) {
     let multiplicacion = num1 * num2;
     return multiplicacion;
 }
@@ -679,8 +679,8 @@ if (operacion == 1) {
 // construir las propiedades de un objeto.
 
 class animal { //crea la platilla de un objeto
-    constructor/*el constructor del objeto*/ 
-    (tipo, raza, nombre, age, color){/*los atributos del objeto*/
+    constructor//el constructor del objeto 
+    (tipo, raza, nombre, age, color){ //los atributos del objeto
         this.tipo=tipo;
         this.raza = raza;
         this.nombre = nombre;
@@ -1216,7 +1216,7 @@ function maths() {
     // Nos devuelve el valor de la constante de Euler
 }
 maths();
-
+*/
 
 //Historia de kofla
 
@@ -1228,11 +1228,168 @@ CUADRADAS Y RAICES CUBICAS.
 
 1)CREAR CALCULADORA CON NUEVA FUNCIONES
 
+function calculadora() {
+    const sumar = (num1, num2) =>{
+        return parseInt(num1) + parseInt(num2);
+    };
+    const restar = (num1, num2) =>{
+        return parseInt(num1) - parseInt(num2);
+    };
+    const multiplicar = (num1, num2) =>{
+        return parseInt(num1) * parseInt(num2);
+    };
+    const dividir = (num1, num2) =>{
+        return parseInt(num1) / parseInt(num2);
+    };
+    const potenciar = (num1, num2) => {
+        return num1**num2;
+    };
+    const raizCuadrada = (num1) => {
+        return Math.sqrt(num1);
+    };
+    const raizCubica = (num1) =>{
+        return Math.cbrt(num1);
+    };
+    alert("Que operacion quieres efectuar");
+    let operacion=prompt("1-suma, 2-resta, 3-multiplicacion, 4-division, 5-Potencias, 6-raices cuadradas, 7-Raices cubicas");
+    parseInt(operacion);
+    if (operacion == 1) {
+        let num1 = prompt("Dame el primer numero");
+        let num2 = prompt("Dame el segundo numero");
+        resultado = sumar(num1, num2);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 2) {
+        let num1 = prompt("Dame el primer numero");
+        let num2 = prompt("Dame el segundo numero");
+        resultado = restar(num1, num2);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 3) {
+        let num1 = prompt("Dame el primer numero");
+        let num2 = prompt("Dame el segundo numero");
+        resultado = multiplicar(num1, num2);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 4) {
+        let num1 = prompt("Dame el primer numero");
+        let num2 = prompt("Dame el segundo numero");
+        resultado = dividir(num1, num2);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 5){
+        let num1 = prompt("Dame el numero de la base");
+        let num2 = prompt("Dame el exponente");
+        resultado = potenciar(num1, num2);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 6){
+        let num1 = prompt("Dame el numero para sacarle la raiz cuadrada");
+        resultado = raizCuadrada(num1);
+        alert(`El resultado es ${resultado}`);
+    } else if (operacion == 7){
+        let num1 = prompt("Dame el numero para sacarle la raiz cubica");
+        resultado = raizCubica(num1);
+        alert(`El resultado es ${resultado}`);
+    }; 
+    let repetir = prompt("Quieres hacer otra operacion? S-Si, N-No");
+    if(repetir =="S"){
+        calculadora();
+    } else{
+        alert("Ok");
+    };
+};
+calculadora();
+
+
 LA FACULTAD DE KOFLA ESTA POR ARRANCAR NUEVAMENTE Y LAS 12
-MATERIAS TIENEN ASIGNADO UN PROFESOR Y TODOS LOS ALUMNOS A SUS CLASES
+MATERIAS TIENEN ASIGNADO UN PROFESOR Y TODOS LOS ALUMNOS ANOTADOS A
+SUS CLASES, PERO NECESITAMOS VERLO DE FORMA ORDENADA.
+
+1)Una funcion que nos devuelva el profesor asignado a la materia,
+y el nombre de los alumnos
+2)Una funcion que nos indique en cuantas clases esta kofla
+3)Nombre de las clases y sus profesores de kofla
+
+*/
+const obtenerInformacion = (materia) =>{
+    materias={
+        fisica : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
+        programacion : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
+        quimica : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
+        logica : ["Dr. Smith", "Peter", "Luke", "Grace", "William"],
+        biologia : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"]      
+    };
+    if(materias[materia] !== undefined){
+        return [materias[materia], materia];
+    }else{
+        return false;
+    };
+};
+const mostrarInformacion = () => { 
+    let decide = prompt("Que materia quieres ver? F-Fisica, P-Programacion, Q-Quimica, L-Logica, B-Biologia");
+    function elegirMateria() {
+        if (decide == "F"){
+            return "fisica";
+        } else if (decide == "P"){
+            return "programacion";
+        } else if (decide == "Q"){
+            return "quimica";
+        } else if (decide == "L"){
+            return "logica";
+        } else if (decide == "B"){
+            return "biologia";
+        } else {
+            alert("Elije una de las anteriores escribiendo su letra correspondiente");
+        };
+    };
+    let defin = elegirMateria();
+    let grupo = obtenerInformacion(defin)[0];
+    let infoProfesor = grupo.shift();  
+    let Materia = obtenerInformacion(defin)[1];   
+    let info = obtenerInformacion(defin);
+    if (info !== false) { 
+        alert(`En la materia de ${Materia}: 
+        actualmente hay: ${grupo.length} alumnos quienes son: ${grupo}. 
+        El profesor es: ${infoProfesor}`);
+    } else{
+        return false;
+    };
+    const mostrarClasesActivas = () => {
+        let grupo = obtenerInformacion(defin)[0];
+        let infoProfesor = grupo.shift();  
+        let Materia = obtenerInformacion(defin)[1]; 
+        let info = obtenerInformacion(defin);
+        if (info !== false) {
+            let verify = grupo.includes("Kofla");
+            if (verify == true) {
+                let koflaPosition = grupo.indexOf("Kofla");
+                grupo.splice(koflaPosition);
+                alert(`Estas inscrito en ${Materia}, junto con ${grupo}. Tu profesor es: ${infoProfesor}`);
+                let decide = prompt("Quieres ver otra materia? S-Si, N-No");
+                if (decide == "S") {
+                    mostrarInformacion();
+                } else{
+                    alert("Ok");
+                };
+            } else if(verify == false){
+                alert(`No estas inscrito en ${Materia}...`);
+                let decide = prompt("Quieres ver otra materia? S-Si, N-No");
+                if (decide == "S") {
+                    mostrarInformacion();
+                } else{
+                    alert("Ok");
+                };
+            };
+        };
+    };
+    mostrarClasesActivas();
+};
+let showClasses = mostrarInformacion();
+
+/*
 
 
+KOFLA ESTA DECIDIDO A INSCRIBIRSE, PERO SE ROMPIO EL SISTEMA DE INSCRIPCION
 
+1) CREAR UNA FUNCION Q LE PREGUNTE A KOFLA EN Q MATERIA SE QUIERE INSCRIBIR
+2) SI HAY 20 INSCRIPTOS NEGARLE LA INCRIPCION
+3)SI HAY MENOS DE 20 INSCRIBIRLO
 */
 
 
