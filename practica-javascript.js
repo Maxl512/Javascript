@@ -1313,7 +1313,12 @@ const classesInformation = (materia) =>{
         programacion : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
         quimica : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
         logica : ["Dr. Smith", "Peter", "Luke", "Grace", "William"],
-        biologia : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"]      
+        biologia : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"],
+        administracion : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
+        ingles : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
+        gastronomia : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
+        artes : ["Dr. Smith", "Peter", "Luke", "Grace", "William"],
+        deportes : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"]      
     };
     if(materias[materia] !== undefined){
         return [materias[materia], materia, materias];
@@ -1322,7 +1327,7 @@ const classesInformation = (materia) =>{
     };
 };
 const mostrarInformacion = (userName) => {   
-    let decide = prompt("Que materia quieres ver? F-Fisica, P-Programacion, Q-Quimica, L-Logica, B-Biologia");
+    let decide = prompt("Que materia quieres ver? F-Fisica, P-Programacion, Q-Quimica, L-Logica, B-Biologia, A-Administracion, I-Ingles, G-Gastronomia, AR-Artes, D-Deportes");
     function elegirMateria() {
         if (decide == "F"){
             return "fisica";
@@ -1334,8 +1339,24 @@ const mostrarInformacion = (userName) => {
             return "logica";
         } else if (decide == "B"){
             return "biologia";
-        } else {
+        } else if (decide == "A"){
+            return "administracion";
+        } else if (decide == "I"){
+            return "ingles";
+        } else if (decide == "G"){
+            return "gastronomia";
+        } else if (decide == "AR"){
+            return "artes";
+        } else if (decide == "D"){
+            return "deportes";
+        }else {
             alert("Elije una de las anteriores escribiendo su letra correspondiente");
+            let decide = prompt("Quieres intentarlo de nuevo? S-Si, N-No");
+            if (decide == "S") {
+                mostrarInformacion(userName);
+            } else{
+                alert("Ok");
+            }; 
         };
     };
     let materia = elegirMateria();
