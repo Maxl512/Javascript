@@ -1403,15 +1403,18 @@ const mostrarInformacion = (userName) => {
 function preguntarName() {
     let nombre = prompt("Cual es tu nombre?");
     if (nombre !== undefined) {
-        alert(`Bienvenido Sr. ${nombre}`);
-        let clasesActivas = 0;
+        alert(`Bienvenido Sr. ${nombre}`);      
         let clases = classesInformation();
-        for(inscritos in clases){
+        let clasesPresentes = [];
+        let clasesActivas = 0;
+        for(inscritos in clases){       
             if (clases[inscritos].includes(nombre)) {
                 clasesActivas++;
+                clasesPresentes.push[", " + inscritos];
             };
         };
-        alert(`Estas inscrito en ${clasesActivas} clases`);           
+        alert(`Estas inscrito en ${clasesActivas} clases`); 
+        alert(`Estas son: ${clasesPresentes}`);
         mostrarInformacion(nombre);
 
     } else{
