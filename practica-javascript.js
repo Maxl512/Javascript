@@ -1409,7 +1409,7 @@ function preguntarName() {
         for(inscritos in clases){       
             if (clases[inscritos].includes(nombre)) {
                 clasesActivas++;
-                clasesPresentes.push[", " + inscritos];
+                clasesPresentes.push(inscritos);
             };
         };
         alert(`Estas inscrito en ${clasesActivas} clases`); 
@@ -1427,8 +1427,8 @@ function preguntarName() {
     };
 };
 preguntarName();
-*/
-/*
+
+
 
 
 KOFLA ESTA DECIDIDO A INSCRIBIRSE, PERO SE ROMPIO EL SISTEMA DE INSCRIPCION
@@ -1436,8 +1436,8 @@ KOFLA ESTA DECIDIDO A INSCRIBIRSE, PERO SE ROMPIO EL SISTEMA DE INSCRIPCION
 1) CREAR UNA FUNCION Q LE PREGUNTE A KOFLA EN Q MATERIA SE QUIERE INSCRIBIR
 2) SI HAY 20 INSCRIPTOS NEGARLE LA INCRIPCION
 3)SI HAY MENOS DE 20 INSCRIBIRLO
-*/
-const materias={
+
+let materias={
     fisica : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
     programacion : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
     quimica : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
@@ -1463,7 +1463,8 @@ const incribir = (userName, materia) => {
         };   
     } else{
         userName.toString();
-        alumnos.push[userName];
+        alumnos.push(userName);
+        console.log(alumnos);
     };
 };
 function darNombre() {
@@ -1516,6 +1517,8 @@ function elegirMateria() {
 materia = elegirMateria();
 
 incribir(userName, materia);
+
+*/
 // Termina CApitulo 4
 
 
