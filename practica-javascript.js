@@ -1306,7 +1306,6 @@ y el nombre de los alumnos
 2)Una funcion que nos indique en cuantas clases esta kofla
 3)Nombre de las clases y sus profesores de kofla
 
-*/
 const classesInformation = (materia) =>{
     materias={
         fisica : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
@@ -1428,7 +1427,7 @@ function preguntarName() {
     };
 };
 preguntarName();
-
+*/
 /*
 
 
@@ -1438,8 +1437,85 @@ KOFLA ESTA DECIDIDO A INSCRIBIRSE, PERO SE ROMPIO EL SISTEMA DE INSCRIPCION
 2) SI HAY 20 INSCRIPTOS NEGARLE LA INCRIPCION
 3)SI HAY MENOS DE 20 INSCRIBIRLO
 */
+const materias={
+    fisica : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
+    programacion : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
+    quimica : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
+    logica : ["Dr. Smith", "Peter", "Luke", "Grace", "William"],
+    biologia : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"],
+    administracion : ["Dr. Smith", "Pedro", "Juan", "Pepe", "Ramon"],
+    ingles : ["Dr. Smith", "Santiago", "Lucas", "Carlos", "Jose", "Kofla"],
+    gastronomia : ["Dr. Smith","Victor", "Bruce", "Carl", "Friedrich", "Kofla"],
+    artes : ["Dr. Smith", "Peter", "Luke", "Grace", "William"],
+    deportes : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"]      
+};
+const incribir = (userName, materia) => {
+    personas = materias[materia];
+    personas.shift();
+    alumnos = personas;
+    if (alumnos.length >= 5) {
+        alert(`Lo siento ${userName} las clases de ${materia} ya estan llenas`);
+        let decide = prompt("Quieres inscribirte en otra materia? S-Si, N-No");
+        if (decide == "S") {
+            elegirMateria();
+        } else{
+            alert("Ok");
+        };   
+    } else{
+        userName.toString();
+        alumnos.push[userName];
+    };
+};
+function darNombre() {
+    let nombre = prompt("Cual es tu nombre?");
+    if (nombre !== undefined) {
+        return nombre;
+    } else {
+        alert("Debes escribir un nombre...");
+        let decide = prompt("Quieres intentarlo de nuevo? S-Si, N-No");
+        if (decide == "S") {
+            darNombre();
+        } else{
+            alert("Ok");
+        }; 
+    };
+};
+let userName = darNombre();
+function elegirMateria() {
+    let decide = prompt("En que materia te quieres? F-Fisica, P-Programacion, Q-Quimica, L-Logica, B-Biologia, A-Administracion, I-Ingles, G-Gastronomia, AR-Artes, D-Deportes");
+    if (decide == "F"){
+        return "fisica";
+    } else if (decide == "P"){
+        return "programacion";
+    } else if (decide == "Q"){
+        return "quimica";
+    } else if (decide == "L"){
+        return "logica";
+    } else if (decide == "B"){
+        return "biologia";
+    } else if (decide == "A"){
+        return "administracion";
+    } else if (decide == "I"){
+        return "ingles";
+    } else if (decide == "G"){
+        return "gastronomia";
+    } else if (decide == "AR"){
+        return "artes";
+    } else if (decide == "D"){
+        return "deportes";
+    }else {
+        alert("Elije una de las anteriores escribiendo su letra correspondiente");
+        let decide = prompt("Quieres intentarlo de nuevo? S-Si, N-No");
+        if (decide == "S") {
+            elegirMateria();
+        } else{
+            alert("Ok");
+        }; 
+    };
+};
+materia = elegirMateria();
 
-
+incribir(userName, materia);
 // Termina CApitulo 4
 
 
