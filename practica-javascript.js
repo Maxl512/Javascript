@@ -1316,9 +1316,9 @@ const classesInformation = (materia) =>{
         biologia : ["Dr. Smith", "Mike", "Paul", "Max", "Michael", "Kofla"]      
     };
     if(materias[materia] !== undefined){
-        return [materias[materia], materia];
+        return [materias[materia], materia, materias];
     }else{
-        return false;
+        return materias;
     };
 };
 const mostrarInformacion = (userName) => {   
@@ -1343,7 +1343,6 @@ const mostrarInformacion = (userName) => {
     let infoProfesor = grupo.shift();  
     let materiaName = classesInformation(materia)[1]; 
     let info = classesInformation(materia);
-    let clasesActivas = 0;
     if (info !== false) { 
         alert(`En la materia de ${materiaName}: 
         actualmente hay: ${grupo.length} alumnos quienes son: ${grupo}. 
@@ -1383,8 +1382,17 @@ const mostrarInformacion = (userName) => {
 function preguntarName() {
     let nombre = prompt("Cual es tu nombre?");
     if (nombre !== undefined) {
-        alert(`Bienvenido Sr. ${nombre}`);           
+        alert(`Bienvenido Sr. ${nombre}`);
+        let clasesActivas = 0;
+        let clases = classesInformation();
+        for(inscritos in clases){
+            if (clases[inscritos].includes(nombre)) {
+                clasesActivas++;
+            };
+        };
+        alert(`Estas inscrito en ${clasesActivas} clases`);           
         mostrarInformacion(nombre);
+
     } else{
         alert("Tienes que ingresar un nombre...");
         let decide = prompt("Quieres intentarlo de nuevo? S-Si, N-No");
