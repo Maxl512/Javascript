@@ -1518,10 +1518,200 @@ materia = elegirMateria();
 
 incribir(userName, materia);
 
-*/
+
 // Termina CApitulo 4
 
 
 
 //Empieza Capitulo 5
+
+// LA CONSOLA 
+
+// ES UNA DE LAS TANTAS HERRAMIENTAS QUE NOS PERMITE VER LOS ERRORES Y MUCHO MAS
+// DE NUESTRO CODIGO.
+
+
+console.assert(5 > 1); //si es true, no nos dice nada, si es false nos dice
+//que la assertion fallo
+
+console.clear(); //limpia la consola
+
+console.error("Q pajo pendejo?"); // nos muestra un error
+
+console.info("Activo perro"); //hace lo mismo q console.log, solo que este
+//es un mensaje informativo, mientras que console.log es un mensaje
+//de depuracion
+
+console.table([1,2,3,4,5]); // toma una argumento obligatorio como la data, que debe
+// ser un array o un objeto, y un parametro adicional: columns, y nos muestra
+// una tabla en consola, q nos dice el index y valor de cada elemento
+
+console.warn("Habla, tienes q tener cuidado"); //Es como el error, 
+// pero nos tira una advertencia
+
+console.dir([1,2,3,4,5]); //Despliega una lista interactiva, para el elemento
+// especificado
+
+function hola(texto) {
+    console.log(texto)
+    console.count(); //nos dice cuantas veces ejecutamos una funcion
+};
+hola("Habla");
+hola("Habla");
+hola("Habla");
+hola("Habla");
+hola("Habla");
+console.countReset(); // Resetea la cuenta
+hola("Habla");
+hola("Habla");
+
+
+console.group("Holas"); // Nos permite crear un grupo
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.group("Otros Holas");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.group("Otros Holas 2");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.groupEnd(); //Nos permite cerrar el grupo
+console.groupEnd(); //Nos permite cerrar el grupo
+console.groupEnd(); //Nos permite cerrar el grupo
+console.log("Hola");
+
+
+console.groupCollapsed("Otros Holas 2"); // nos muestra el grupo cerrado
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.log("Hola");
+console.groupEnd();
+
+console.time(); //Inicia un cronometro
+
+console.timeLog(); //nos muestra el tiempo q paso desde q el cronometro
+//inicio a llegar hasta esta linea de codigo
+
+console.timeEnd(); // Detiene el cronometro, y nos dice cuanto tardo
+// en llegar hasta esta linea de codigo
+
+console.log("%cViva Chiabe", "color:red; background:yellow; padding:20px; border: 3px solid black;");
+//Nos permite asignarle estilos a un texto
+
+
+
+// Historia de Kofla
+
+
+YA TERMINO EL PRIMER SEMESTRE Y KOFLA ESTA MUY ANSIOSO, YA Q COMO ES TONTO
+NO SABE SI PODRA APROBAR LAS MAATERIAS O NO. LO QUE SABE ES Q PARA LOGRARLO
+NECESITARA EL 90% DE ASISTENCIAS, EL PROMEDIO POR MATERIA DEBE SER AL MENOS
+7/10, Y DEBE TENER COMO MINIMO EL 75% DE LOS TRABAJOS PRACTICOS ENTREGADOS
+
+1)SOLICITAR LOS DATOS Y DECIR SI APRUEBA O NO
+2)MOSTRARLO CON COLORES REPRESENTATIVOS
+ROJO = NO APROBO
+
+let materias={
+    fisica : [75, 5, 88, "Fisica"],
+    programacion : [90, 8, 81, "Programacion"],
+    quimica : [50, 6, 74, "Quimica"],
+    logica :  [92, 10, 95, "Logica"],
+    biologia :  [95, 9, 100, "Biologia"],
+    administracion : [65, 7, 70, "Administracion"]
+};
+console.log("%cPara aprobar necesitas mayor o igual a 90% de asistencias, un promedio mayor o igual 7/10 y haber entregado mas del 75% de los trabajos practicos", "color: orange; padding:10px;text-align:center;")
+const estadoDeMateria = () =>{
+    for (materia in materias){
+        let asistencias = materias[materia][0];
+        let promedio = materias[materia][1];
+        let trabajos = materias[materia][2];
+        if (asistencias >= 90 && promedio >= 7 && trabajos >= 75) {
+            console.groupCollapsed(`%c${materias[materia][3]}`, `color:blue` );
+            console.log(`%cTuvistes un: ${asistencias}% de asistencias, un promedio de ${promedio}/10 y entregastes el ${trabajos}% de los trabajos. Felicidades, has aprobado esta materia!!!`, `color:green;padding:10px;border:3px solid black;background:lightblue;`);
+            console.groupEnd();
+        } else {
+            console.groupCollapsed(`%c${materias[materia][3]}`, `color:blue` );
+            console.log(`%cTuvistes un: ${asistencias}% de asistencias, un promedio de ${promedio}/10 y entregastes el ${trabajos}% de los trabajos. Lo sentimos, no has aprobado esta materia...`, `color:red;padding:10px;border:3px solid black;background:lightblue;`);
+            console.groupEnd();
+        };
+    };
+};
+estadoDeMateria();
+*/
+/*
+KOFLA ESTA SUFRIENDO UN POCO YA QUE A PESAR DE TENER UN 90% DE ASISTENCIAS
+Y UN PROMEDIO SUPERIOR A 7/10, NO CREE LLEGAR A ENTREGAR EL 75% DE TRABAJOS
+PRACTICOS A TIEMPO YA QUE NECESITARA DIVIDIR LAS TAREAS QUE VA A HACER 
+SEMANALMENTE. KOFLA DEBE TRABAJAR 8 HORAS POR DIA DURANTE DOS SEMANAS
+ENTRE LAS QUE TIENE: 24 HORAS PARA ESTUDIAR, 24 PARA HACER TRABAJOS PRACTICOS
+56 HORAS PARA TRABAJAR Y 8 HORAS PARA HACER QUEHACERES DOMESTICOS
+
+1)ORGANIZAR LAS ACTIVIDADES DIARIAMENTE
+2)UTILIZAR LA CONSOLA PARA ORGANIZARLO
+3)CADA TAREA NO DEBE SUPERAR LAS 4 HORAS
+
+
+*/
+let horas = {
+    Trabajar : [56 / 14, "trabajar"],
+    Estudiar : [24 / 14, "estudiar"],
+    Tareas : [24 / 14, "hacer los trabajos practicos"],
+    Casa :[ 8 / 14, "hacer tus quehacere domesticos"]
+};
+
+for (hora in horas) { 
+    let tarea = horas[hora][1];
+    let tiempo = Math.round(horas[hora][0]);
+    if (tiempo > 4) {
+        console.groupCollapsed(`%c${hora}`, `font-size:20px;color:blue`); 
+        console.group(`%cSemana 1`, `font-size:15px;color:black;`);
+        for ( i=0; i < 7; i++){  
+            console.groupCollapsed("Dia " + i);          
+            console.log(`%Tendrias que ${tarea} aproximadamente: ${tiempo} horas, eso es mas de 4 horas y no es posible hacerlo`, `color:red; padding:10px;background:lightblue;border: 3px solid black;`);            
+            console.groupEnd();
+        };
+        console.groupEnd();
+        console.groupCollapsed(`%cSemana2`, `font-size:15px;color:black;`);
+        for ( i=7; i < 14; i++){
+            console.groupCollapsed("Dia " + i);
+            console.log(`%Tendrias que ${tarea} aproximadamente: ${tiempo} horas, eso es mas de 4 horas y no es posible hacerlo`, `color:red; padding:10px;background:lightblue;border: 3px solid black;`);            
+            console.groupEnd();
+        };
+        console.groupEnd();
+        console.groupEnd();
+    } else{
+        console.groupCollapsed(`%c${hora}`, `font-size:20px;color:blue`);
+        console.group(`%cSemana 1`, `font-size:15px;color:black;`);
+        for ( i=1; i < 8; i++){
+            console.groupCollapsed("Dia " + i);
+            console.log(`%cHoy debes ${tarea} aproximadamente: ${tiempo} horas.`, `color:green; padding:10px;background:lightblue;border: 3px solid black;`);
+            console.groupEnd();
+        };
+        console.groupEnd();
+        console.groupCollapsed(`%cSemana2`, `font-size:15px;color:black;`);
+        for ( i=7; i < 15; i++){
+            console.groupCollapsed("Dia " + i);
+            console.log(`%cHoy debes ${tarea} aproximadamente: ${tiempo} horas.`, `color:green; padding:10px;background:lightblue;border: 3px solid black;`);
+            console.groupEnd();
+        };  
+        console.groupEnd();  
+        console.groupEnd();
+    };
+};
+
+
+// Termina Capitulo 5
+
+
+
+
+
 
