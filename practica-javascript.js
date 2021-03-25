@@ -2050,9 +2050,6 @@ console.log(div3.closest(".div"));
 // Y KOFLA DEBE SELECCIONAR CUAL LLAVE USAR
 // 2) UNA VEZ SELECCIONADA, ENVIAR LOS DATOS AL SERVIDOR Y QUE OTRO PROGRAMADOR SE ENCARGUE
 
-
-
-
 const createKey = () =>{
     let quantity = prompt("Cuantas llaves quieres ingresar? MAX=20");
     quantity = parseInt(quantity) + 1;
@@ -2141,24 +2138,18 @@ const createKey = () =>{
     
             const newRow = document.createElement("TR");
     
-            const newTdn = document.createElement("TD");
-    
-            const newTdm = document.createElement("TD");
-    
+            const newTdn = document.createElement("TD");   
+            const newTdm = document.createElement("TD");   
             const newTdp = document.createElement("TD");
     
             const table = document.querySelector("#table-keys")
     
-            newTdn.appendChild(keyName);
-    
-            newTdm.appendChild(randomModel);
-    
+            newTdn.appendChild(keyName); 
+            newTdm.appendChild(randomModel); 
             newTdp.appendChild(randomPrice);
     
-            newRow.appendChild(newTdn);
-    
-            newRow.appendChild(newTdm);
-    
+            newRow.appendChild(newTdn);    
+            newRow.appendChild(newTdm);  
             newRow.appendChild(newTdp);
     
             table.appendChild(newRow);
@@ -2181,84 +2172,3 @@ const wondering = () =>{
     };
 };
 wondering();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
