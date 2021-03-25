@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <h3>Scope de variables</h3>
@@ -20,12 +21,43 @@
     <br>
     <h3>Array</h3>
     <img src="javas/array.png" width="100%">
-    <br>
-
-
-
-
+    <br><hr>
+    <h1>DOM</h1>
     
+
+    <div id="container">
+        <h2 id="title">Titulo</h2> 
+        <h3 class="title-two">Titulo dos</h3>
+        <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non facere ipsum quas iusto sunt incidunt. Cupiditate eius, repellat et deleniti ut, temporibus voluptatibus cum rerum amet esse, magnam fugit omnis.</p>
+        <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non facere ipsum quas iusto sunt incidunt. Cupiditate eius, repellat et deleniti ut, temporibus voluptatibus cum rerum amet esse, magnam fugit omnis.</p>
+        <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non facere ipsum quas iusto sunt incidunt. Cupiditate eius, repellat et deleniti ut, temporibus voluptatibus cum rerum amet esse, magnam fugit omnis.</p>
+        <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non facere ipsum quas iusto s</p>
+        <p id="paragraph"><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</b> Non facere ipsum quas iusto s</p>
+        <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non facere ipsum quas iusto s</p>
+        <input type="range" id="one-range">
+        <label for="one-range">Un Rango</label>
+        <button id="button">Boton</button>
+    </div>
+    <hr><br>    
+    <form id="form" action="#">
+
+        <label for="input-text">Texto</label>
+        <input value="Maximo" id="input-text" type="text">
+        <br>
+        <input class="text"  type="text" required>
+        <br><br>
+        <label for="input-number">Numero</label>
+        <input value="18" id="input-number" type="number">
+        <br><br>
+        <label for="input-range">Rango</label>
+        <input value="76" id="input-range" type="range">
+        <br><br>
+        <input id="input-file" type="file">
+        <br><br>
+    </form>
+    <input id="input-submit" type="submit"> 
+
+
     <script src="practica-javascript.js"></script>
 </body>
 </html>

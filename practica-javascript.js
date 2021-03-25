@@ -1659,7 +1659,6 @@ ENTRE LAS QUE TIENE: 24 HORAS PARA ESTUDIAR, 24 PARA HACER TRABAJOS PRACTICOS
 3)CADA TAREA NO DEBE SUPERAR LAS 4 HORAS
 
 
-*/
 let horas = {
     Trabajar : [56 / 14, "trabajar"],
     Estudiar : [24 / 14, "estudiar"],
@@ -1708,7 +1707,231 @@ for (hora in horas) {
 };
 
 
+*/
 // Termina Capitulo 5
+
+//Empieza capitulo 6
+
+//DOM = document object model
+//Es el documento que tiene todos los elementos
+
+//Nodo: es cualquier etiqueta del cuerpo, un documento se divide en nodos
+// Document: El que abarca todos los nodos 
+// Element: todos los nodos definidos por etiquetas html
+// TexT: el texto dentri de un nodo se considera un nodo hijo de tipo text
+// Attribute: los atributos de las etiquetas defines nodos
+// Comentarios: Son comentarios
+
+
+//METODOS DE SLECCION DE ELEMENTOS
+
+//document.getElementById(); Nos permite seleccionar un elemento por medio
+// de su id
+let container = document.getElementById("container");
+
+//document.getElementsByTagName(); Nos permite seleccionar todos los elementos
+// que sean del tipo asignado. No es recomendable
+let paragraphTwo = document.getElementsByTagName("p")[2];
+
+//document.querySelector(); Nos permite seleccionar un elemento segun su
+// Atributos. Class o ID
+let titleTwo = document.querySelector(".title-two");
+
+let paragraphs = document.querySelectorAll("#paragraph");
+
+console.log(container);
+console.log(paragraphTwo); // Podemos usar el index, para elegir cual de todos
+//los elementos mostrar. Aqui no hay 0. No es recomendable
+console.log(titleTwo);
+console.log(paragraphs[4]);// Nos devuelve todos, pero podemos elegir un 
+// en especifico usando el index
+
+
+//Metodos para eleminar, añadir y modificar atributos
+
+
+const range = document.querySelector("#one-range");
+
+range.setAttribute("type", "text"); //element.setAttribute(attribute, value);
+//nos permite cambiar y añadir el valor del atributo de un elemento. 
+
+console.log(range.getAttribute("type")); // element.getAttribute(attribute);
+//Nos permite obtener el valor de un atributo asignado
+
+
+console.log(range.removeAttribute("type")); // element.removeAttribute(attribute)
+//nos permite remover el atributo de un elemento
+
+
+//ATRIBUTOS GLOBALES : son los q contienen los todos elementos en comun
+// en cualquier elemento los podemos aplicar
+titleTwo.setAttribute("contentEditable", "true");
+//ContentEditable, nos permite decidir si el usuario puede o no modificar
+//el valor de un elemento
+
+
+paragraphs[5].setAttribute("dir", "rtl");
+// dir, nos permite decidir la direccion en la q el elemento va,
+//rtl = right to left
+//ltr = left to right
+
+
+paragraphs[4].setAttribute("hidden", "true");
+// hidden, nos permite ocultar un elemento
+
+
+paragraphs[3].setAttribute("tabindex", "1");
+//tabindex, nos permite cambair el orden de la seleccion,
+//cuando apretamos la tecla tab
+
+paragraphs[0].setAttribute("title", "perro jsjsjsjsjs");
+// title, nos muestra una pequeña ventanita con alguna 
+// informacion sobre el elemento
+
+
+// Atributos de inputs, podemos acceder directamente desde javascript
+let form = document.getElementById("form");
+let inputText = document.getElementById("input-text");
+let inputNumber = document.getElementById("input-number");
+let inputRange = document.getElementById("input-range");
+let inputFile = document.getElementById("input-file");
+let inputSubmit = document.getElementById("input-submit");
+
+
+let inputTextV, inputNumberV, inputRangeV;
+
+inputTextV = inputText.value;
+inputNumberV = inputNumber.value;
+inputRangeV = inputRange.value;
+
+let inFormV = `Texto: ${inputTextV}, en numero ${inputNumberV} y en rango ${inputRangeV}`;
+
+document.write(inFormV + "<br><br>");
+//Con value, podemos ver el valor de un input
+
+
+let inputTextT, inputNumberT, inputRangeT;
+
+inputTextT = inputText.type;
+inputNumberT = inputNumber.type;
+inputRangeT = inputRange.type;
+
+let inFormT = `Texto: ${inputTextT}, en numero ${inputNumberT} y en rango ${inputRangeT}`;
+
+document.write(inFormT + "<br><br>");
+// Con type, podemos ver el tipo de input del input
+
+inputFile.accept = "image/png";
+// nos permite poner los archivos acceptados por el input, normalmente
+// se usa en tipos files
+
+
+inputSubmit.setAttribute("form", "form");
+// form nos permite ejecutar un input dentro de un form, 
+// asi no este dentro
+
+
+ let texto = document.querySelector(".text");
+ texto.minLength = 6;
+// minlength nos permite especificar cuantos caracteres necesita el 
+// formulario para continuar
+
+texto.placeholder ="viva chiabe";
+//placeholder pone la descripcion o instruccion de un input
+
+
+inputFile.required = "required";
+//required pone un input q debe ser llenado obligatoriamente para continuar
+
+
+
+// ATRIBUTO STYLE
+
+inputText.style.padding ="20px";
+texto.style.backgroundColor="#235";
+
+// el atributo style nos permite ponerle estilos a lso elementos
+// las propiedades css no tienen - en javascript, se utiliza el camel case
+
+
+
+// CLASES, CLASS LIST Y SUS METODOS
+// Nos permite acceder a las clases de los elementos
+
+inputText.classList.add("clase");
+// element.classList.add(); Nos permite añadir clases a un elemento
+
+
+inputText.classList.remove("clase");
+//element.classList.remove(); Nos permite quitar clases a un elemento
+
+inputText.classList.add("clase");
+inputText.classList.add("clasedos");
+inputText.classList.add("clasetres");
+
+let valor = inputText.classList.item(1);
+//element.classList.item(); Nos devuelve el valor de la clase segun el
+//indice especificado
+console.log(valor);
+
+
+valor = inputText.classList.contains("clase");
+//element.classList.contains(); Nos permite verificar si el elemento
+// contiene o no la clase especificada
+console.log(valor);
+
+
+inputText.classList.toggle("clase");
+// element.classList.toggle(); si el elemento tien la clase la quita
+// si no la tiene la agrega
+console.log(form);
+
+
+inputText.classList.replace("clasedos", "Chavez");
+// element.classList.replace(); Nos permite reemplazar una clase por otra
+
+
+// OBTENCION y MODIFICACION DE ELEMENTOS
+
+
+let theText = paragraphs[4].textContent;
+console.log(paragraphs[4]);
+console.log(theText);
+//element.textContentsolo nos muestra el texto de 
+// un elemento, sin etiquetas html
+
+theText = paragraphs[4].innerHTML;
+console.log(theText);
+//element.innerHTML nos muestra el codigo dentro del elemento
+theText = paragraphs[4].outerHTML;
+console.log(theText);
+// element.outerHTML nos muestra el codigo y la etiqueta y lo q contiene 
+// del elemento
+
+
+
+// CREACION DE ELEMENTOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
