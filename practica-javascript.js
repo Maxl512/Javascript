@@ -2073,7 +2073,7 @@ const createKey = () =>{
             setValues(name, model, price);      
         };       
     };
-    const drawKeyInformation = () => {
+    const setKeyInformation = () => {
         for (key in keys){
             if (keys.length > 1) {
                 let name = document.createTextNode(keys[key][0]);
@@ -2093,6 +2093,8 @@ const createKey = () =>{
                 newRow.appendChild(newTdn);
                 newRow.appendChild(newTdm);
                 newRow.appendChild(newTdp);
+
+                newRow.setAttribute("class", "row");
 
                 table.appendChild(newRow);
             } else {
@@ -2114,11 +2116,56 @@ const createKey = () =>{
                 newRow.appendChild(newTdm);
                 newRow.appendChild(newTdp);
 
+                newRow.setAttribute("class", "row");
+
                 table.appendChild(newRow);
             }
         }
     };
-    drawKeyInformation();
+    setKeyInformation();
+    
+
+    const setRandomKeys = () =>{
+        let clases = document.querySelectorAll(".row");
+        let quantity= clases.length;
+        for (i = quantity; i < 20; i++) {
+            let keyName = document.createTextNode("Item" + (i + 1));
+
+            let randomModel = Math.random()*10000;
+            randomModelR = Math.round(randomModel);
+            randomModel = document.createTextNode(randomModelR);
+
+            let randomPrice = Math.random()*100;
+            let randomPriceR =Math.round(randomPrice);
+            randomPrice = document.createTextNode(randomPriceR);
+    
+            const newRow = document.createElement("TR");
+    
+            const newTdn = document.createElement("TD");
+    
+            const newTdm = document.createElement("TD");
+    
+            const newTdp = document.createElement("TD");
+    
+            const table = document.querySelector("#table-keys")
+    
+            newTdn.appendChild(keyName);
+    
+            newTdm.appendChild(randomModel);
+    
+            newTdp.appendChild(randomPrice);
+    
+            newRow.appendChild(newTdn);
+    
+            newRow.appendChild(newTdm);
+    
+            newRow.appendChild(newTdp);
+    
+            table.appendChild(newRow);
+            
+        };      
+    };
+    setRandomKeys();
 };
 const wondering = () =>{
     let decide = prompt("Quieres agregar una llave? S-Si, N-No");
