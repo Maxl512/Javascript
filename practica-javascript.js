@@ -1707,7 +1707,7 @@ for (hora in horas) {
 };
 
 
-*/
+
 // Termina Capitulo 5
 
 //Empieza capitulo 6
@@ -1911,6 +1911,192 @@ console.log(theText);
 
 
 // CREACION DE ELEMENTOS
+
+const containerTwo = document.querySelector(".container2");
+const fragmento = document.createDocumentFragment();
+// document.createDocumentFragment(); nos permite crear un fragmento
+// para evitar el malgasto de recursos
+for ( i = 0; i < 5; i++) {
+    const elementItem = document.createElement("P");
+    // document.createElement(); nos permite crear un elemento
+    
+    const textItem = document.createTextNode("lorem ipsum sdjasdajnsdanjisdanjsdanjisdsdnjisdi");
+    // element.createTextNode(); nos permite crear un elemento de texto
+    
+    elementItem.appendChild(textItem);
+    
+    fragmento.appendChild(elementItem);
+    // element.appendChild(); nos permite agregar un hijo al nodo del elemento  
+}
+containerTwo.appendChild(fragmento);
+console.log(containerTwo);
+
+
+// OBTENCION Y MODIFICACION DE CHILDS
+
+const containerThree = document.querySelector(".container3");
+
+const firstChild = containerThree.firstChild;
+// element.firstChild; nos permite seleccionar el primer hijo del elemento
+const firstChildText = firstChild.textContent;
+
+console.log(firstChildText);
+
+const lastChild = containerThree.lastChild;
+// element.lastChild; nos permite seleccionar el ultimo hijo del elemento
+const lastChildText = lastChild.textContent;
+
+console.log(lastChildText);
+
+const nodes = containerThree.childNodes;
+// element.childNodes; nos permite ver todos los nodos de un elemento
+console.log(nodes);
+
+const children = containerThree.children;
+// element.children; nos permite ver los hijos de un elemento
+for (child of children){
+    console.log(child.textContent);
+}
+
+
+// METODOS DE CHILDS
+
+const headerTwo = document.createElement("H2");
+const headerTwoText = document.createTextNode("This is a header Two");
+headerTwo.appendChild(headerTwoText);
+
+const paragraph = document.createElement("P");
+const paragraphText = document.createTextNode("This is a fucking paragraph");
+paragraph.appendChild(paragraphText);
+
+containerThree.appendChild(paragraph);
+
+containerThree.replaceChild(headerTwo, firstChild);
+// Nos permite reemplaza el elemento q queramos en el lugar del elemento
+// que queremos reemplazar
+
+containerThree.removeChild(paragraph);
+// Nos permite eliminar un elemento
+
+
+let response = containerThree.hasChildNodes();
+// Si el elemento tiene hijos dara true. sino false
+if (response) {
+    console.log("si tiene hijos WIII");
+} else{
+    console.log("ayno");
+};
+
+
+// Propiedades de PARENTS
+
+let parentElem = titleTwo.parentElement;
+console.log(parentElem);
+//element.parentElement nos muestra el padre de un elemento
+
+
+let parentNode= titleTwo.parentNode;
+console.log(parentNode);
+// element.parentNode nos muestra el nodo padre del elemento
+
+// METODOS DE SIBLINGS
+
+let nextSibling = paragraphs[0].nextElementSibling;
+console.log(nextSibling);
+// nextSibling, nos selecciona al elemento hermano del elemento q
+//  especificamos
+
+let previousSibling = paragraphs[1].previousSibling;
+console.log(previousSibling);
+// previousSibling, nos selecciona el hermano anterior al elemento 
+// especificado
+
+let nextElementSibling = paragraphs[2].nextElementSibling;
+console.log(nextElementSibling);
+// nextElementSibling; nos selecciona el elemento hermano despues
+// del elemento especificado
+
+let previousElementSibling = paragraphs[2].previousElementSibling;
+console.log(previousElementSibling);
+// nextElementSibling; nos selecciona el elemento hermano despues
+// del elemento especificado
+
+
+const div3 = document.querySelector(".div3");
+console.log(div3.closest(".div"));
+// Nos retorna los elementos ascendentes mas cercanios, que sean del mismo
+// tipo del elemento especificado
+
+*/
+
+/*
+ULTIMO HISTORIA DE KOFLA
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
