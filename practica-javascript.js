@@ -2029,20 +2029,111 @@ console.log(div3.closest(".div"));
 
 */
 
-/*
-ULTIMO HISTORIA DE KOFLA
+// ULTIMO HISTORIA DE KOFLA
+// KOFLA SE QUEDO ENCERRADO EN SU CASA PQ SE LE ROMPIO LA LLAVE
+// PERO NECESITA IR URGENTE A LA FACUTLAD SI QUIERE APROBAR
+// EL RESTO DE MATERIAS QUE LE FALTA, YA QU ENO PUEDE FALTAR
+// NI UNA SOLA VEZ POR ESTAR AL LIMITE DE ASSITENCIA. LO QUE SE LE OCURRIO ES
+// LLAMAR A UN CERRAJERO Y PEDIRLE QUE TRAIGA LA LLAVE INDICADA.
+// EL PROBLEMA RESIDE EN QUE NO HAY TIEMPO PARA QUE EL CERRAJERO VEA LA LLAVE
+// A ELEGIR, EL TIENE Q TOMAR UNA Y SALIR. MUY OPORTUNO PARA EL PROBLEMA ACTUAL
+// SOLO PUEDE TRAER UNA Y PROBARLA. A LO Q KOFLA SE DA CUENTA Q ES UNA LLAVE 
+// ANTIGUA ASI QUE NUCHAS POSIBLIDADES YA FUERON DESCARTADAS, AHORA SOLAMENTE
+// FALTAN DECIDIR EL MODELO DE LAS LLAVES PARA QUE EL CERRAJERO LA TRAIGA
+// Y PUEDA SOLUCIONAR SU PROBLEMA. PERO COMO TIENE TANTA MALA SUERTE
+// NO TIENE NI SIQUIERA INTERNET PERO LO QUE SI TIENE ES A UN PROGRAMADOR
+// UQE LE VA  A HACER UN SISTEMA PARA MOSTRAR LAS LLAVES PARA Q EL ELIJA
+// LA LLAVE PARA DECIRLE AL CERRAJERO PARA QUE PUEDA ABRIR LA PUERTA.
+// HAY SOLAMENTE 20 MODELOS POSIBLES, DEJEN QUE KOFLA ELIJA EL MODELO INDICADO
+
+// 1)SE DEBE INDICAR A KOFLA LAS 20 LLAVES POSIBLES CON SUS 4 IMAGENES
+// Y KOFLA DEBE SELECCIONAR CUAL LLAVE USAR
+// 2) UNA VEZ SELECCIONADA, ENVIAR LOS DATOS AL SERVIDOR Y QUE OTRO PROGRAMADOR SE ENCARGUE
 
 
 
 
+const createKey = () =>{
+    let quantity = prompt("Cuantas llaves quieres ingresar? MAX=20");
+    quantity = parseInt(quantity) + 1;
+    const keys = [];
+    if (quantity > 21) {
+        alert("Hey, no puedes crear mas de 20 llaves...");
+        createKey();
+    } else{
+        alert("Esta Bien!");    
+        for (i = 1; i < quantity; i++) {
+            let name = prompt(`Como se llama la llave ${i}?`);
+            let model = prompt(`Como se llama el modelo de la llave ${i}?`);
+            let price  = [prompt(`Cuanto cuesta la llave ${i}?`) + "$"];
+            function setValues(name, model, price) {
+                const key = [name, model, price];
+                keys.push(key);
+            };
+            setValues(name, model, price);      
+        };       
+    };
+    const drawKeyInformation = () => {
+        for (key in keys){
+            if (keys.length > 1) {
+                let name = document.createTextNode(keys[key][0]);
+                let model = document.createTextNode(keys[key][1]);
+                let price = document.createTextNode(keys[key][2]);
+   
+                const newRow = document.createElement("TR");
+                const newTdn = document.createElement("TD");
+                const newTdm = document.createElement("TD");
+                const newTdp = document.createElement("TD");
+                const table = document.querySelector("#table-keys");
 
+                newTdn.appendChild(name);
+                newTdm.appendChild(model);
+                newTdp.appendChild(price);
 
-*/
+                newRow.appendChild(newTdn);
+                newRow.appendChild(newTdm);
+                newRow.appendChild(newTdp);
 
+                table.appendChild(newRow);
+            } else {
+                let name = document.createTextNode(keys[key][0]);
+                let model = document.createTextNode(keys[key][1]);
+                let price = document.createTextNode(keys[key][2]);
 
+                const newRow = document.createElement("TR");
+                const newTdn = document.createElement("TD");
+                const newTdm = document.createElement("TD");
+                const newTdp = document.createElement("TD");
+                const table = document.querySelector("#table-keys");
 
+                newTdn.appendChild(name);
+                newTdm.appendChild(model);
+                newTdp.appendChild(price);
 
+                newRow.appendChild(newTdn);
+                newRow.appendChild(newTdm);
+                newRow.appendChild(newTdp);
 
+                table.appendChild(newRow);
+            }
+        }
+    };
+    drawKeyInformation();
+};
+const wondering = () =>{
+    let decide = prompt("Quieres agregar una llave? S-Si, N-No");
+    if (decide == "S") {
+        createKey();
+    }else{
+        let decide = prompt("Estas segur@?");
+        if (decide=="S") {
+            alert("Ok");
+        } else{
+            wondering();
+        };
+    };
+};
+wondering();
 
 
 
